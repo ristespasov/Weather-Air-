@@ -90,43 +90,43 @@ class App extends Component {
     return (
       <div>
         <div className="wrapper">
-          <div className="main">
-            <div className="container">
-              <div className="row">
-                <div className="col-xs-7 form-container">
-                  <Form getWeather={this.getWeather} />
-                  <Weather
-                    icon={this.state.icon}
-                    city={this.state.city}
-                    temperature={this.state.temperature}
-                    realFeel={this.state.realFeel}
-                    description={this.state.description}
-                    error={this.state.error}
-                  />
-                </div>
-                <div>
-                  <Weather
-                    windSpeed={this.state.windSpeed}
-                    humidity={this.state.humidity}
-                    pressure={this.state.pressure}
-                    uv={this.state.uv}
-                  />
-                </div>
-                <div>
-                  <Weather
-                    partOfDay={this.state.partOfDay}
-                    windDirectionTxt={this.state.windDirectionTxt}
-                    windDirectionDeg={this.state.windDirectionDeg}
-                    dewPoint={this.state.dewPoint}
-                    clouds={this.state.clouds}
-                    visibility={this.state.visibility}
-                    solarRadiation={this.state.solarRadiation}
-                    rain={this.state.rain}
-                    snow={this.state.snow}
-                    sunrise={this.state.sunrise}
-                    sunset={this.state.sunset}
-                  />
-                </div>
+          <div className="col-md-8">
+            <Form getWeather={this.getWeather} />
+          </div>
+          <div className="main-info container">
+            <div className="row">
+              <div className="current-weather-info col-md-4">
+                <Weather
+                  icon={this.state.icon}
+                  city={this.state.city}
+                  temperature={this.state.temperature}
+                  realFeel={this.state.realFeel}
+                  description={this.state.description}
+                  error={this.state.error}
+                />
+              </div>
+              <div className="current-weather-info col-md-4">
+                <Weather
+                  windSpeed={this.state.windSpeed}
+                  humidity={this.state.humidity}
+                  pressure={this.state.pressure}
+                  uv={this.state.uv}
+                />
+              </div>
+              <div className="current-weather-info col-md-4">
+                <Weather
+                  partOfDay={this.state.partOfDay}
+                  windDirectionTxt={this.state.windDirectionTxt}
+                  windDirectionDeg={this.state.windDirectionDeg}
+                  dewPoint={this.state.dewPoint}
+                  clouds={this.state.clouds}
+                  visibility={this.state.visibility}
+                  solarRadiation={this.state.solarRadiation}
+                  rain={this.state.rain}
+                  snow={this.state.snow}
+                  sunrise={this.state.sunrise}
+                  sunset={this.state.sunset}
+                />
               </div>
             </div>
           </div>
