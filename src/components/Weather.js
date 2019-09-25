@@ -128,7 +128,7 @@ const Weather = props => (
             <p className="current-weather-detail">
                 <span className="detail-icon"><img alt="icon" src={precipIcon}></img></span>
                 <span className="detail-txt">Rain: </span>
-                <span className="detail-data">{props.rain} mm/hr</span>
+                <span className="detail-data">{Math.round(props.rain)} mm/hr</span>
             </p>
         }
         {
@@ -136,7 +136,7 @@ const Weather = props => (
             <p className="current-weather-detail">
                 <span className="detail-icon"><img alt="icon" src={snowfallIcon}></img></span>
                 <span className="detail-txt">Snow: </span>
-                <span className="detail-data">{props.snow} mm/hr</span>
+                <span className="detail-data">{Math.round(props.snow)} mm/hr</span>
             </p>
         }
         {
