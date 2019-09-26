@@ -97,22 +97,22 @@ class App extends Component {
         case 'Thunderstorm with light rain':
         case 'Thunderstorm with rain':
         case 'Thunderstorm with heavy rain':
-          icon = <img alt="icon" src="../icons/thunderstorm-and-rain.png" />
+          icon = <img alt="icon" src="icons/thunderstorm-and-rain.png" />;
           break;
         case 'Thunderstorm with light drizzle':
         case 'Thunderstorm with drizzle':
         case 'Thunderstorm with heavy drizzle':
-          icon = <img alt="icon" src="../icons/thunderstorm.png" />
+          icon = <img alt="icon" src="icons/thunderstorm.png" />
           document.body.style.backgroundImage = 'url("images/bg-06.jpg")';
           break;
         case 'Thunderstorm with Hail':
-          icon = <img alt="icon" src="../icons/thunderstorm-and-hail.png" />
+          icon = <img alt="icon" src="icons/thunderstorm-and-hail.png" />
           document.body.style.backgroundImage = 'url("images/bg-10.jpg")';
           break;
         case 'Light drizzle':
         case 'Drizzle':
         case 'Heavy drizzle':
-          icon = <img alt="icon" src="../icons/drizzle.png" />
+          icon = <img alt="icon" src="icons/drizzle.png" />
           document.body.style.backgroundImage = 'url("images/bg-04.jpg")';
           break;
         case 'Light rain':
@@ -122,7 +122,7 @@ class App extends Component {
         case 'Light shower rain':
         case 'Shower rain':
         case 'Heavy shower rain':
-          icon = <img alt="icon" src="../icons/rain.png" />;
+          icon = <img alt="icon" src="icons/rain.png" />;
           document.body.style.backgroundImage = 'url("images/bg-04.jpg")';
           break;
         case 'Light snow':
@@ -131,16 +131,16 @@ class App extends Component {
         case 'Snow shower':
         case 'Heavy snow shower':
         case 'Flurries':
-          icon = <img alt="icon" src="../icons/snow.png" />
+          icon = <img alt="icon" src="icons/snow.png" />
           document.body.style.backgroundImage = 'url("images/bg-08.jpg")';
           break;
         case 'Sleet':
         case 'Heavy sleet':
-          icon = <img alt="icon" src="../icons/sleet.png" />
+          icon = <img alt="icon" src="icons/sleet.png" />
           document.body.style.backgroundImage = 'url("images/bg-08.jpg")';
           break;
         case 'Mix snow/rain':
-          icon = <img alt="icon" src="../icons/snow-and-rain.png" />
+          icon = <img alt="icon" src="icons/snow-and-rain.png" />
           document.body.style.backgroundImage = 'url("images/bg-08.jpg")';
           break;
         case 'Mist':
@@ -149,33 +149,33 @@ class App extends Component {
         case 'Sand/dust':
         case 'Fog':
         case 'Freezing fog':
-          icon = <img alt="icon" src="../icons/fog.png" />
+          icon = <img alt="icon" src="icons/fog.png" />
           break;
         case 'Clear sky':
           if (this.partOfDay === "d") {
-            icon = <img alt="icon" src="../icons/clear-sky-day.png"></img>;
+            icon = <img alt="icon" src="icons/clear-sky-day.png"></img>;
             document.body.style.backgroundImage = 'url("images/bg-01.jpg")';
           } else {
-            icon = <img alt="icon" src="../icons/clear-sky-night.png" />;
+            icon = <img alt="icon" src="icons/clear-sky-night.png" />;
             document.body.style.backgroundImage = 'url("images/bg-12.jpg")';
           }
           break;
         case 'Few clouds':
           if (this.partOfDay === "d") {
-            icon = <img alt="icon" src="../icons/few-clouds-day.png" />
+            icon = <img alt="icon" src="icons/few-clouds-day.png" />
             document.body.style.backgroundImage = 'url("images/bg-02.jpg")';
           } else {
-            icon = <img alt="icon" src="../icons/few-clouds-night.png" />
+            icon = <img alt="icon" src="icons/few-clouds-night.png" />
             document.body.style.backgroundImage = 'url("images/bg-09.jpg")';
           }
           break;
         case 'Scattered clouds':
-          icon = <img alt="icon" src="../icons/cloud.png" />
+          icon = <img alt="icon" src="icons/cloud.png" />
           document.body.style.backgroundImage = 'url("images/bg-03.jpg")';
           break;
         case 'Broken clouds':
         case 'Overcast clouds':
-          icon = <img alt="icon" src="../icons/clouds.png"></img>;
+          icon = <img alt="icon" src="icons/clouds.png"></img>;
           document.body.style.backgroundImage = 'url("images/bg-03.jpg")';
           break;
         default:

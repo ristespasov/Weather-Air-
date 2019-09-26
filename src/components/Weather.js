@@ -70,7 +70,13 @@ const Weather = props => (
             <p className="current-weather-detail">
                 <span className="detail-icon"><img alt="icon" src={uvIcon}></img></span>
                 <span className="detail-txt">UV Index: </span>
-                <span className="detail-data">{Math.round(props.uv)}</span>
+                <span className="detail-data">{Math.round(props.uv)} </span>
+                <span className="detail-data">{props.uv === 0 && '(None)'}</span>
+                <span className="detail-data">{props.uv > 0 && props.uv <= 2 && '(Low)'}</span>
+                <span className="detail-data">{props.uv > 2 && props.uv <= 5 && '(Medium)'}</span>
+                <span className="detail-data">{props.uv > 5 && props.uv <= 7 && '(High)'}</span>
+                <span className="detail-data">{props.uv > 7 && props.uv <= 10 && '(Very High)'}</span>
+                <span className="detail-data">{props.uv > 10 && '(Extreme)'}</span>
             </p>
         }
         {
@@ -78,7 +84,7 @@ const Weather = props => (
             <p className="current-weather-detail">
                 <span className="detail-icon"><img alt="icon" src={partOfDayIcon}></img></span>
                 <span className="detail-txt">Part of day: </span>
-                <span className="detail-data">{props.partOfDay}</span>
+                <span className="detail-data">{props.partOfDay === 'd' ? 'Day' : 'Night'}</span>
             </p>
         }
         {

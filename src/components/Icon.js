@@ -3,7 +3,7 @@ import React from 'react';
 const Icon = props => (
     <div>
         {
-            props.icon != null && <div><img className="current-weather-icon" alt="icon" src={props.getIcon} />{props.icon}</div>
+            props.icon != null && <div className="current-weather-icon">{props.getIcon}</div>
         }
     </div>
 )
