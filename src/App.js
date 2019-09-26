@@ -93,7 +93,7 @@ class App extends Component {
 
     ///////////////// TODO ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function getIcon(icon) {
-      switch (data.data[0].weather.icon) {
+      switch (data.data[0].weather.description) {
         case 'Thunderstorm with light rain':
         case 'Thunderstorm with rain':
         case 'Thunderstorm with heavy rain':
