@@ -40,6 +40,10 @@ body{
     margin-top: 100px;
 }
 
+.current-weather-icon {
+    width: 200px;
+    height: 200px;
+}
 .current-city {
     font-size: 25px;
     font-family: 'Quicksand', sans-serif;
@@ -70,11 +74,15 @@ body{
 }
 
 .current-weather-basic {
-    margin-left: 25px;
+    margin-left: 50px;
 }
 
 .current-weather-detail {
-    margin-left: 25px;
+    margin-left: 50px;
+}
+
+.current-weather-basic-div {
+    margin-top: 290px;
 }
 
 .detail-icon img {
@@ -115,7 +123,7 @@ body{
 /* Circle animation */
 .circle-div {
     position: relative;
-    margin-top: 150px;
+    margin-top: 120px;
 }
 
 #counter {
@@ -129,7 +137,7 @@ body{
 #circle1 {
     height: 165px;
     width: 165px;
-    background-color:#696878;
+    background-color:#44809684;
     border-radius: 50%;
     position: absolute;
     top:50%;
@@ -142,7 +150,7 @@ body{
     height: 165px;
     width: 165px;
     border-radius: 50%;
-    box-shadow: 0 0 6px rgba(0,0,0,.5);
+    box-shadow: 0 0 6px rgba(133, 131, 131, 0.5);
     position: absolute;
     top: 50%;
     left: 50%;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Form from './components/Form';
-// import Icon from './components/Icon';
+import Icon from './components/Icon';
 import Weather from './components/Weather';
 import AirQuality from './components/AirQuality';
 
@@ -91,23 +91,117 @@ class App extends Component {
       });
     }
 
+    ///////////////// TODO ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    function getIcon(icon) {
+      switch (data.data[0].weather.icon) {
+        case 'Thunderstorm with light rain':
+        case 'Thunderstorm with rain':
+        case 'Thunderstorm with heavy rain':
+          icon = <img alt="icon" src="../icons/thunderstorm-and-rain.png" />
+          break;
+        case 'Thunderstorm with light drizzle':
+        case 'Thunderstorm with drizzle':
+        case 'Thunderstorm with heavy drizzle':
+          icon = <img alt="icon" src="../icons/thunderstorm.png" />
+          document.body.style.backgroundImage = 'url("images/bg-06.jpg")';
+          break;
+        case 'Thunderstorm with Hail':
+          icon = <img alt="icon" src="../icons/thunderstorm-and-hail.png" />
+          document.body.style.backgroundImage = 'url("images/bg-10.jpg")';
+          break;
+        case 'Light drizzle':
+        case 'Drizzle':
+        case 'Heavy drizzle':
+          icon = <img alt="icon" src="../icons/drizzle.png" />
+          document.body.style.backgroundImage = 'url("images/bg-04.jpg")';
+          break;
+        case 'Light rain':
+        case 'Moderate rain':
+        case 'Heavy rain':
+        case 'Freezing rain':
+        case 'Light shower rain':
+        case 'Shower rain':
+        case 'Heavy shower rain':
+          icon = <img alt="icon" src="../icons/rain.png" />;
+          document.body.style.backgroundImage = 'url("images/bg-04.jpg")';
+          break;
+        case 'Light snow':
+        case 'Snow':
+        case 'Heavy snow':
+        case 'Snow shower':
+        case 'Heavy snow shower':
+        case 'Flurries':
+          icon = <img alt="icon" src="../icons/snow.png" />
+          document.body.style.backgroundImage = 'url("images/bg-08.jpg")';
+          break;
+        case 'Sleet':
+        case 'Heavy sleet':
+          icon = <img alt="icon" src="../icons/sleet.png" />
+          document.body.style.backgroundImage = 'url("images/bg-08.jpg")';
+          break;
+        case 'Mix snow/rain':
+          icon = <img alt="icon" src="../icons/snow-and-rain.png" />
+          document.body.style.backgroundImage = 'url("images/bg-08.jpg")';
+          break;
+        case 'Mist':
+        case 'Smoke':
+        case 'Haze':
+        case 'Sand/dust':
+        case 'Fog':
+        case 'Freezing fog':
+          icon = <img alt="icon" src="../icons/fog.png" />
+          break;
+        case 'Clear sky':
+          if (this.partOfDay === "d") {
+            icon = <img alt="icon" src="../icons/clear-sky-day.png"></img>;
+            document.body.style.backgroundImage = 'url("images/bg-01.jpg")';
+          } else {
+            icon = <img alt="icon" src="../icons/clear-sky-night.png" />;
+            document.body.style.backgroundImage = 'url("images/bg-12.jpg")';
+          }
+          break;
+        case 'Few clouds':
+          if (this.partOfDay === "d") {
+            icon = <img alt="icon" src="../icons/few-clouds-day.png" />
+            document.body.style.backgroundImage = 'url("images/bg-02.jpg")';
+          } else {
+            icon = <img alt="icon" src="../icons/few-clouds-night.png" />
+            document.body.style.backgroundImage = 'url("images/bg-09.jpg")';
+          }
+          break;
+        case 'Scattered clouds':
+          icon = <img alt="icon" src="../icons/cloud.png" />
+          document.body.style.backgroundImage = 'url("images/bg-03.jpg")';
+          break;
+        case 'Broken clouds':
+        case 'Overcast clouds':
+          icon = <img alt="icon" src="../icons/clouds.png"></img>;
+          document.body.style.backgroundImage = 'url("images/bg-03.jpg")';
+          break;
+        default:
+          break;
+      }
+    }
+    getIcon();
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     let counter = document.getElementById('counter').getContext('2d');
-    let no = 0;   // Starting Point
-    let pointToFill = 4.72;   //Point from where you want to fill the circle
-    let cw = counter.canvas.width;   //Return canvas width
-    let ch = counter.canvas.height;   //Return canvas height
-    let diff;   // find the different between current value (no) and trageted value (100)
+    let no = 0;
+    let pointToFill = 4.72;
+    let cw = counter.canvas.width;
+    let ch = counter.canvas.height;
+    let diff;
 
     function fillCounter() {
       counter.textAlign = 'center';
 
-      counter.font = '25px Quicksand, sans-serif';   //set font size and face
+      counter.font = '25px Quicksand, sans-serif';
 
-      counter.clearRect(0, 0, cw, ch);   // Clear canvas every time when function is call
+      counter.clearRect(0, 0, cw, ch);
 
-      counter.lineWidth = 15;   // size of stroke
+      counter.lineWidth = 15;
 
-      counter.fillStyle = '#fff';   // text color that you want to fill in counter/circle
+      counter.fillStyle = '#fff';
 
       diff = ((no / 100) * Math.PI * 2 * 10);
 
@@ -157,8 +251,10 @@ class App extends Component {
         <div className="main-info container">
           <div className="row">
             <div className="current-weather-info col-md-4">
-              <Weather
+              <Icon
                 icon={this.state.icon}
+              />
+              <Weather
                 city={this.state.city}
                 temperature={this.state.temperature}
                 realFeel={this.state.realFeel}
@@ -168,16 +264,16 @@ class App extends Component {
             </div>
             <div className="current-weather-info col-md-4">
               <div>
+                <AirQuality
+                  aqi={this.state.aqi}
+                />
+              </div>
+              <div className="current-weather-basic-div">
                 <Weather
                   windSpeed={this.state.windSpeed}
                   humidity={this.state.humidity}
                   pressure={this.state.pressure}
                   uv={this.state.uv}
-                />
-              </div>
-              <div>
-                <AirQuality
-                  aqi={this.fillCounter}
                 />
               </div>
 

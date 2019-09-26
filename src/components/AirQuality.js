@@ -6,7 +6,7 @@ const AirQuality = props => (
             {
                 props.aqi != null &&
                 <p className="current-aqi">
-                    <span className="current-aqi-data">{props.aqi}</span>
+                    <span className="current-aqi-data">{props.fillCounter}</span>
                 </p>
             }
         </div>
