@@ -42,7 +42,7 @@ body{
 .current-weather-icon {
     width: 200px;
     height: 200px;
-    margin: 25px 0px 25px 50px;
+    margin: 10px 0px 25px 50px;
 }
 .current-city {
     font-size: 25px;

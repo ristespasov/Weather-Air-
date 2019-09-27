@@ -33,6 +33,7 @@ class App extends Component {
     aqi: undefined,
     error: undefined
   }
+
   getWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
@@ -144,7 +145,6 @@ class App extends Component {
       setInterval(fillCounter, 5);
     }
   }
-
 
   render() {
     return (

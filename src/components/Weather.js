@@ -13,7 +13,6 @@ import precipIcon from "../detail icons/precip.png";
 import snowfallIcon from "../detail icons/snowfall.png";
 import sunriseIcon from "../detail icons/sunrise.png";
 import sunsetIcon from "../detail icons/sunset.png";
-// import rain from '../icons/rain.png';
 
 const Weather = props => (
     <div>
@@ -163,9 +162,6 @@ const Weather = props => (
             props.error && <p>{props.error}</p>
         }
     </div>
-
 );
-
-
 
 export default Weather;
