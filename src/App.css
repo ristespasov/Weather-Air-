@@ -5,7 +5,6 @@ body{
 } 
 
 /* FORM */
-
 .city-input {
     width: 40%;
     height: 40px;
@@ -43,6 +42,7 @@ body{
 .current-weather-icon {
     width: 200px;
     height: 200px;
+    margin: 25px 0px 25px 50px;
 }
 .current-city {
     font-size: 25px;
@@ -106,24 +106,10 @@ body{
 }
 
 /* AIR QUALITY */
-
-/* Data */
-/* .current-aqi-data {
-    vertical-align: middle;
-    font-family: 'Quicksand', sans-serif;
-    color: white;
-}
-
-.current-aqi-txt {
-    vertical-align: middle;
-    font-family: 'Quicksand', sans-serif;
-    color: white;
-} */
-
 /* Circle animation */
 .circle-div {
     position: relative;
-    margin-top: 120px;
+    margin-top: 125px;
 }
 
 #counter {
