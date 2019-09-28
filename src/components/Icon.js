@@ -27,7 +27,7 @@ const Icon = props => (
             <div>
                 <span>
                     {
-                        props.icon === ('t01d' || 't01n' || 't02d' || 't02n' || 't03d' || 't03n') &&
+                        (props.icon === 't01d' || props.icon === 't01n' || props.icon === 't02d' || props.icon === 't02n' || props.icon === 't03d' || props.icon === 't03n') &&
                         <img className="current-weather-icon" alt="icon" src={thunderstormRain} />
                     }
                 </span>
@@ -57,55 +57,55 @@ const Icon = props => (
                 </span>
                 <span>
                     {
-                        props.icon === ('d01d' && 'd01n' && 'd02d' && 'd02n' && 'd03d' && 'd03n') &&
+                        (props.icon === 'd01d' || props.icon === 'd01n' || props.icon === 'd02d' || props.icon === 'd02n' || props.icon === 'd03d' || props.icon === 'd03n') &&
                         <img className="current-weather-icon" alt="icon" src={drizzle} />
                     }
                 </span>
                 <span>
                     {
-                        props.icon === ('r01d' && 'r01n' && 'r02d' && 'r02n' && 'r03d' && 'r03n' && 'f01d' && 'f01n' && 'r04d' && 'r04n') &&
+                        (props.icon === 'r01d' || props.icon === 'r01n' || props.icon === 'r02d' || props.icon === 'r02n' || props.icon === 'r03d' || props.icon === 'r03n' || props.icon === 'f01d' || props.icon === 'f01n' || props.icon === 'r04d' || props.icon === 'r04n') &&
                         <img className="current-weather-icon" alt="icon" src={rain} />
                     }
                 </span>
                 <span>
                     {
-                        props.icon === ('r04d' && 'r05d' && 'r06d') &&
+                        (props.icon === 'r04d' || props.icon === 'r05d' || props.icon === 'r06d') &&
                         <img className="current-weather-icon" alt="icon" src={showerRainDay} />
                     }
                 </span>
                 <span>
                     {
-                        props.icon === ('r04n' && 'r05n' && 'r06n') &&
+                        (props.icon === 'r04n' || props.icon === 'r05n' || props.icon === 'r06n') &&
                         <img className="current-weather-icon" alt="icon" src={showerRainNight} />
                     }
                 </span>
                 <span>
                     {
-                        props.icon === ('s01d' && 's01n' && 's02d' && 's02n' && 's03d' && 's03n' && 's06d' && 's06n') &&
+                        (props.icon === 's01d' || props.icon === 's01n' || props.icon === 's02d' || props.icon === 's02n' || props.icon === 's03d' || props.icon === 's03n' || props.icon === 's06d' || props.icon === 's06n') &&
                         <img className="current-weather-icon" alt="icon" src={snow} />
                     }
                 </span>
                 <span>
                     {
-                        props.icon === ('s04d' && 's04n') &&
+                        (props.icon === 's04d' || props.icon === 's04n') &&
                         <img className="current-weather-icon" alt="icon" src={rainSnow} />
                     }
                 </span>
                 <span>
                     {
-                        props.icon === ('s05d' && 's045n') &&
+                        (props.icon === 's05d' || props.icon === 's045n') &&
                         <img className="current-weather-icon" alt="icon" src={sleet} />
                     }
                 </span>
                 <span>
                     {
-                        props.icon === ('a01d' && 'a02d' && 'a03d' && 'a04d' && 'a05d' && 'a06d') &&
+                        (props.icon === 'a01d' || props.icon === 'a02d' || props.icon === 'a03d' || props.icon === 'a04d' || props.icon === 'a05d' || props.icon === 'a06d') &&
                         <img className="current-weather-icon" alt="icon" src={fogDay} />
                     }
                 </span>
                 <span>
                     {
-                        props.icon === ('a01n' && 'a02n' && 'a03n' && 'a04n' && 'a05n' && 'a06n') &&
+                        (props.icon === 'a01n' || props.icon === 'a02n' || props.icon === 'a03n' || props.icon === 'a04n' || props.icon === 'a05n' || props.icon === 'a06n') &&
                         <img className="current-weather-icon" alt="icon" src={fogNight} />
                     }
                 </span>
@@ -135,13 +135,13 @@ const Icon = props => (
                 </span>
                 <span>
                     {
-                        props.icon === ('c03d' && 'c03n' && 'c04d' && 'c04n') &&
+                        (props.icon === 'c03d' || props.icon === 'c03n' || props.icon === 'c04d' || props.icon === 'c04n') &&
                         <img className="current-weather-icon" alt="icon" src={clouds} />
                     }
                 </span>
                 <span>
                     {
-                        props.icon === ('u00d' || 'u00n') &&
+                        (props.icon === 'u00d' || props.icon === 'u00n') &&
                         <img className="current-weather-icon" alt="icon" src={unknown} />
                     }
                 </span>
@@ -149,19 +149,5 @@ const Icon = props => (
         }
     </div>
 )
-
-// class Icon extends React.Component {
-
-
-
-//     render() {
-//         let icon;
-//         return (
-//             <div>
-//                 {this.getIcon(icon)}
-//             </div>
-//         );
-//     }
-// }
 
 export default Icon;

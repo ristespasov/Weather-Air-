@@ -1,8 +1,27 @@
 body{
-    height: 100%;
     background-image: linear-gradient( rgba(113,213,225,1), rgba(73,146,226,1)); 
     background-attachment: fixed;
 } 
+
+/* NAV */
+.navbar {
+    background: rgba(70, 130, 130, 0.7);
+    background-blend-mode: darken;
+}
+
+.navbar a {
+    color: white;
+    padding: 5px 10px 5px 10px !important;
+}
+
+.navbar-brand {
+    padding: 0px !important;
+}
+
+.logo-nav {
+    width: 30px;
+    height: 30px;
+}
 
 /* FORM */
 .city-input {
@@ -10,6 +29,7 @@ body{
     height: 40px;
     border-radius: 20px 0px 0px 20px;
     padding-left: 15px;
+    margin-top: 40px;
 }
 
 .city-input:focus, .city-input:active {
@@ -21,7 +41,7 @@ body{
     width: 100px;
     height: 40px;
     border-radius: 0px 20px 20px 0px;
-    background-color: rgb(10, 100, 100);
+    background-color: rgba(70, 130, 130, 0.7);
     color: white;
 }
 
@@ -34,9 +54,9 @@ body{
 .main-info {
     width: 80%;
     height: auto;
-    background: rgba(70, 130, 130, 0.5);
+    background: rgba(70, 130, 130, 0.7);
     border-radius: 5px;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .current-weather-icon {
@@ -70,7 +90,7 @@ body{
 }
 
 .current-weather-info {
-    margin: 25px 0px 25px 0px;
+    margin: 25px 0px 10px 0px;
 }
 
 .current-weather-basic {
@@ -82,7 +102,7 @@ body{
 }
 
 .current-weather-basic-div {
-    margin-top: 290px;
+    margin-top: 287px;
 }
 
 .detail-icon img {
@@ -109,7 +129,7 @@ body{
 /* Circle animation */
 .circle-div {
     position: relative;
-    margin-top: 125px;
+    margin-top: 120px;
 }
 
 #counter {

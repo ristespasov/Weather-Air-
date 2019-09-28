@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/Navbar';
 import Form from './components/Form';
 import Icon from './components/Icon';
 import Weather from './components/Weather';
@@ -149,6 +150,9 @@ class App extends Component {
   render() {
     return (
       <div>
+        <div>
+          <Navbar />
+        </div>
         <div className="container text-center">
           <div className="forms-buttons">
             <Form getWeather={this.getWeather} />
