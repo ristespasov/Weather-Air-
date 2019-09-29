@@ -1,0 +1,29 @@
+.section-btn-div {
+    width: 33.33%;
+}
+
+.section-btn {
+    width: 100%;
+    background-color: rgb(60, 100, 130, 0.7);
+    color: white;
+}
+
+#current {
+    border-width: 0px 0px 1px 1px;
+    border-style: solid;
+    border-radius: 0px 0px 0px 5px;
+    border-color: white;
+}
+
+#hourly {
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: white;
+}
+
+#forecast {
+    border-width: 0px 1px 1px 0px;
+    border-style: solid;
+    border-radius: 0px 0px 5px 0px;
+    border-color: white;
+}

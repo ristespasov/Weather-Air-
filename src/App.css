@@ -1,14 +1,14 @@
 body{
-    /* background-image: linear-gradient( rgba(113,213,225,1), rgba(73,146,226,1)); 
-    background-attachment: fixed; */
-    background-image: url('images/bg-08.jpg');
+    background-image: linear-gradient( rgba(113,213,225,1), rgba(73,146,226,1)); 
+    background-attachment: fixed;
+    /* background-image: url('images/bg-02.jpg');
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     margin: 0 auto;
-    padding: 0 auto;
+    padding: 0 auto; */
 } 
 
 /* CURRENT WEATHER */
@@ -46,7 +46,7 @@ body{
 #circle1 {
     height: 165px;
     width: 165px;
-    background-color:#44809684;
+    background-color:rgb(60, 100, 130, 0.5);
     border-radius: 50%;
     position: absolute;
     top:50%;
@@ -70,7 +70,7 @@ body{
 #circle2 {
     height: 196px;
     width: 196px;
-    background-color:#BBD9DB;
+    background-color:rgba(187, 217, 219, 0.5);
     border-radius: 50%;
     position: absolute;
     top:50%;

@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar/Navbar';
 import Form from './components/Form/Form';
+import SectionButtons from './components/SectionButtons/SectionButtons';
 import Icon from './components/Icon/Icon';
 import Weather from './components/Weather/Weather';
 import AirQuality from './components/AirQuality/AirQuality';
@@ -161,6 +162,9 @@ class App extends Component {
         </div>
         <div className="main-info container">
           <div className="row">
+            <div className="col-md-12">
+              <SectionButtons />
+            </div>
             <div className="current-weather-info col-md-4">
               <Icon
                 icon={this.state.icon}

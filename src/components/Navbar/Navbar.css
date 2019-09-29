@@ -1,18 +1,26 @@
 .navbar {
-    background: rgb(60, 100, 130, 0.7);
+    background: rgb(60, 100, 130);
     background-blend-mode: darken;
-}
-
-.navbar a {
-    color: white;
-    padding: 5px 10px 5px 10px !important;
-}
-
-.navbar-brand {
-    padding: 0px !important;
 }
 
 .logo-nav {
     width: 30px;
     height: 30px;
+}
+
+.a {
+    color: white ;
+    padding: 0px 15px 0px 15px;
+}
+
+.a:hover {
+    color: black !important;
+}
+
+#basic-nav-dropdown {
+    color: white !important;
+}
+
+.toggler {
+    border-color: white !important;
 }
