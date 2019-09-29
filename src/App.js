@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './components/Navbar';
-import Form from './components/Form';
-import Icon from './components/Icon';
-import Weather from './components/Weather';
-import AirQuality from './components/AirQuality';
+import Navbar from './components/Navbar/Navbar';
+import Form from './components/Form/Form';
+import Icon from './components/Icon/Icon';
+import Weather from './components/Weather/Weather';
+import AirQuality from './components/AirQuality/AirQuality';
 
 const apiKey = '835041d0eac24acb9b5748839af27a23';
 let units = 'metric';
@@ -186,7 +187,6 @@ class App extends Component {
                   uv={this.state.uv}
                 />
               </div>
-
             </div>
             <div className="current-weather-info col-md-4">
               <Weather

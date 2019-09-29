@@ -1,0 +1,52 @@
+.current-city {
+    font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+}
+
+.current-temp {
+    font-size: 60px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+}
+
+.real-feel-temp {
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: lightgrey;
+}
+
+.current-weather-descritpion {
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+}
+
+.current-weather-basic {
+    margin-left: 50px;
+}
+
+.current-weather-detail {
+    margin-left: 50px;
+}
+
+.detail-icon img {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+} 
+
+.detail-txt {
+    margin-left: 10px;
+    vertical-align: middle;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.detail-data {
+    vertical-align: middle;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+}

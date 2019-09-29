@@ -1,24 +1,25 @@
 import React from 'react';
-import thunderstormRain from '../icons/thunderstorm-rain.png';
-import thunderstormDrizzleDay from '../icons/thunderstorm-drizzle-d.png';
-import thunderstormDrizzleNight from '../icons/thunderstorm-drizzle-n.png';
-import hailDay from '../icons/hail-d.png';
-import hailNight from '../icons/hail-n.png';
-import drizzle from '../icons/drizzle.png';
-import rain from '../icons/rain.png';
-import showerRainDay from '../icons/shower-rain-d.png';
-import showerRainNight from '../icons/shower-rain-n.png';
-import snow from '../icons/snow.png';
-import rainSnow from '../icons/rain-snow.png';
-import sleet from '../icons/sleet.png';
-import fogDay from '../icons/fog-d.png';
-import fogNight from '../icons/fog-n.png';
-import clearSkyDay from '../icons/clear-sky-d.png';
-import clearSkyNight from '../icons/clear-sky-n.png';
-import fewCloudsDay from '../icons/few-clouds-d.png';
-import fewCloudsNight from '../icons/few-clouds-n.png';
-import clouds from '../icons/clouds.png';
-import unknown from '../icons/unknown.png';
+import './Icon.css';
+import thunderstormRain from '../../icons/thunderstorm-rain.png';
+import thunderstormDrizzleDay from '../../icons/thunderstorm-drizzle-d.png';
+import thunderstormDrizzleNight from '../../icons/thunderstorm-drizzle-n.png';
+import hailDay from '../../icons/hail-d.png';
+import hailNight from '../../icons/hail-n.png';
+import drizzle from '../../icons/drizzle.png';
+import rain from '../../icons/rain.png';
+import showerRainDay from '../../icons/shower-rain-d.png';
+import showerRainNight from '../../icons/shower-rain-n.png';
+import snow from '../../icons/snow.png';
+import rainSnow from '../../icons/rain-snow.png';
+import sleet from '../../icons/sleet.png';
+import fogDay from '../../icons/fog-d.png';
+import fogNight from '../../icons/fog-n.png';
+import clearSkyDay from '../../icons/clear-sky-d.png';
+import clearSkyNight from '../../icons/clear-sky-n.png';
+import fewCloudsDay from '../../icons/few-clouds-d.png';
+import fewCloudsNight from '../../icons/few-clouds-n.png';
+import clouds from '../../icons/clouds.png';
+import unknown from '../../icons/unknown.png';
 
 const Icon = props => (
     <div>

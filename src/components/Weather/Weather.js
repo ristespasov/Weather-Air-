@@ -1,18 +1,19 @@
 import React from "react";
-import windSpeedIcon from "../detail icons/windspeed.png";
-import humidityIcon from "../detail icons/humidity.png";
-import pressureIcon from "../detail icons/pressure.png";
-import uvIcon from "../detail icons/uv.png";
-import partOfDayIcon from "../detail icons/pod.png";
-import windDirIcon from "../detail icons/winddir.png";
-import dewPointIcon from "../detail icons/dewpoint.png";
-import cloudCoverageIcon from "../detail icons/cloudcoverage.png";
-import visibilityIcon from "../detail icons/visibility.png";
-import solarRadIcon from "../detail icons/solarrad.png";
-import precipIcon from "../detail icons/precip.png";
-import snowfallIcon from "../detail icons/snowfall.png";
-import sunriseIcon from "../detail icons/sunrise.png";
-import sunsetIcon from "../detail icons/sunset.png";
+import './Weather.css';
+import windSpeedIcon from "../../detail icons/windspeed.png";
+import humidityIcon from "../../detail icons/humidity.png";
+import pressureIcon from "../../detail icons/pressure.png";
+import uvIcon from "../../detail icons/uv.png";
+import partOfDayIcon from "../../detail icons/pod.png";
+import windDirIcon from "../../detail icons/winddir.png";
+import dewPointIcon from "../../detail icons/dewpoint.png";
+import cloudCoverageIcon from "../../detail icons/cloudcoverage.png";
+import visibilityIcon from "../../detail icons/visibility.png";
+import solarRadIcon from "../../detail icons/solarrad.png";
+import precipIcon from "../../detail icons/precip.png";
+import snowfallIcon from "../../detail icons/snowfall.png";
+import sunriseIcon from "../../detail icons/sunrise.png";
+import sunsetIcon from "../../detail icons/sunset.png";
 
 const Weather = props => (
     <div>
