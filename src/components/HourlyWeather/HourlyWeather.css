@@ -1,0 +1,25 @@
+.hourly-detail {
+    text-align: center;
+    vertical-align: center;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.hour {
+    font-weight: bold;
+}
+
+.h-weather-icon-div {
+  margin: 0 auto;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.h-weather-icon img{
+    width: 40px;
+    height: 40px;
+}
+
+.h-real-feel {
+    color: lightgray;
+}

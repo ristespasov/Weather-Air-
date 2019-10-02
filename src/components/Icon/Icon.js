@@ -64,7 +64,7 @@ const Icon = props => (
                 </span>
                 <span>
                     {
-                        (props.icon === 'r01d' || props.icon === 'r01n' || props.icon === 'r02d' || props.icon === 'r02n' || props.icon === 'r03d' || props.icon === 'r03n' || props.icon === 'f01d' || props.icon === 'f01n' || props.icon === 'r04d' || props.icon === 'r04n') &&
+                        (props.icon === 'r01d' || props.icon === 'r01n' || props.icon === 'r02d' || props.icon === 'r02n' || props.icon === 'r03d' || props.icon === 'r03n' || props.icon === 'f01d' || props.icon === 'f01n') &&
                         <img className="current-weather-icon" alt="icon" src={rain} />
                     }
                 </span>

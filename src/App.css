@@ -1,7 +1,7 @@
 body{
     background-image: linear-gradient( rgba(113,213,225,1), rgba(73,146,226,1)); 
     background-attachment: fixed;
-    /* background-image: url('images/bg-02.jpg');
+    /* background-image: url('images/bg-09.jpg');
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -12,12 +12,28 @@ body{
 } 
 
 /* CURRENT WEATHER */
-.main-info {
-    width: 80%;
-    height: auto;
-    background: rgb(60, 100, 130, 0.7);
-    border-radius: 5px;
+#accordion {
     margin-top: 40px;
+}
+
+.card {   
+    background: transparent !important;
+}
+
+.card-header {
+    background: rgb(60, 100, 130, 0.9) !important;
+}
+
+.card-link {
+    color: white;
+}
+
+.card-link:hover {
+    color: black;
+}
+
+.card-body {
+    background: rgba(71, 102, 125, 0.7);
 }
 
 .current-weather-info {
@@ -78,4 +94,3 @@ body{
     transform: translate(-50%,-50%);
     z-index: -1;
 }
-
