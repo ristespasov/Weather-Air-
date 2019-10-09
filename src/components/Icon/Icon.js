@@ -22,7 +22,7 @@ import clouds from '../../icons/clouds.png';
 import unknown from '../../icons/unknown.png';
 
 const Icon = props => (
-    <div>
+    <div id="current-weather-icon-div">
         {
             props.icon != null &&
             <div>

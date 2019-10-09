@@ -1,3 +1,9 @@
+.current-time-data {
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+}
+
 .current-city {
     font-size: 25px;
     font-family: 'Quicksand', sans-serif;
@@ -49,4 +55,151 @@
     vertical-align: middle;
     font-family: 'Quicksand', sans-serif;
     color: white;
+}
+
+@media screen 
+and (max-width: 1200px)
+and (min-width: 992px) {
+
+    .current-weather-basic {
+        margin-left: 20px;
+    }
+
+    .current-weather-detail {
+        margin-left: 20px;
+    }
+
+}
+
+@media screen 
+and (max-width: 991px)
+and (min-width: 768px) {
+
+    .current-weather-basic {
+        margin-left: 10px;
+    }
+
+    .current-weather-detail {
+        margin-left: 0px;
+    }
+
+    .current-time-data {
+        font-size: 12px;
+    }
+
+    .current-city {
+        font-size: 15px;
+    }
+
+    .current-temp {
+        font-size: 40px;
+    }
+
+    .real-feel-temp {
+        font-size: 12px;
+    }
+
+    .current-weather-descritpion {
+        font-size: 12px;
+    }
+
+    .detail-icon img {
+        width: 20px;
+        height: 20px;
+    } 
+
+    .detail-txt {
+        font-size: 13px;
+        margin-left: 5px;
+    }
+
+    .detail-data {
+        font-size: 13px;
+    }
+
+}
+
+@media screen 
+and (max-width: 767px) {
+
+    .current-weather-basic{
+        margin: 0px;
+    }
+
+    #current-time span{
+        font-size: 12px;
+        
+    }
+
+    #current-time {
+        text-align: center;
+        margin: 50px 0px -40px 0px;
+    }
+
+    #city-temp-rf {
+        width: 70%;
+        float: right;
+        margin: -100px 10% 0px 0px;
+    }
+
+    #city-temp-rf p{
+        text-align: right;
+        margin: 0;
+    }
+
+     .current-city {
+        font-size: 15px;
+    }
+
+    .current-temp {
+        font-size: 35px;
+    }
+
+    .real-feel-temp {
+        font-size: 12px;
+    }
+
+    .current-weather-descritpion {
+        margin-left: 8%;
+        font-size: 12px;
+    }
+
+    .current-weather-detail {
+        margin-left: 0px;
+    }
+
+    .detail-icon img {
+        width: 15px;
+        height: 15px;
+    } 
+
+    .detail-txt {
+        font-size: 10px;
+        margin-left: 1px;
+    }
+
+    .detail-data {
+        font-size: 10px;
+    }
+
+    #ws-hum {
+        width: 50%;
+        display: inline-block;
+    }
+
+    #pr-uv {
+        width: 50%;
+        display: inline-block;
+    }
+
+    #detail-div-1 {
+        width: 50%;
+        display: inline-block; 
+    }
+
+    #detail-div-2 {
+        width: 50%;
+        display: inline-block;
+    }
+
 }

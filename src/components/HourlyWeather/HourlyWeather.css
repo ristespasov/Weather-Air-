@@ -1,8 +1,9 @@
-.hourly-detail {
+.hourly-item {
     text-align: center;
     vertical-align: center;
     color: white;
     font-family: 'Quicksand', sans-serif;
+    margin: 15px 0px 15px 0px;
 }
 
 .hour {
@@ -10,9 +11,10 @@
 }
 
 .h-weather-icon-div {
-  margin: 0 auto;
-  padding-bottom: 15px;
-  text-align: center;
+    padding-bottom: 15px;
+    margin: 0 auto;
+    text-align: center;
+
 }
 
 .h-weather-icon img{
@@ -22,4 +24,42 @@
 
 .h-real-feel {
     color: lightgray;
+}
+
+@media screen and (max-width: 577px) {
+
+    .hourly-info {
+        height: 100px;
+        vertical-align: middle;
+        margin: 0 auto;
+    }
+
+    .hourly-item {
+        display: block;
+        height: 0;
+        margin: 15px 0px -15px 0px;
+    }
+
+    .hourly-detail {
+        width: 25%;
+        display: inline-block;
+        vertical-align: middle;      
+    }
+
+    .hour {
+        display: block;
+    }
+
+    .h-day {
+        display: block;
+    }
+
+    .h-temp {
+        font-size: 20px;
+    }
+
+    .h-real-feel {
+        font-size: 20px;
+    }
+    
 }

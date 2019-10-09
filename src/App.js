@@ -7,12 +7,14 @@ import Icon from './components/Icon/Icon';
 import Weather from './components/Weather/Weather';
 import AirQuality from './components/AirQuality/AirQuality';
 import HourlyWeather from './components/HourlyWeather/HourlyWeather';
+import DailyWeather from './components/DailyWeather/DailyWeather';
 
-const apiKey = '835041d0eac24acb9b5748839af27a23';
+const apiKey = 'ce96de25f5984c07a75e087c2285c9b1';
 let units = 'metric';
 
 class App extends Component {
   state = {
+    cityCurrentTimeFormatted: undefined,
     icon: undefined,
     city: undefined,
     temperature: undefined,
@@ -58,6 +60,26 @@ class App extends Component {
     h_realFeel_4: undefined,
     h_realFeel_5: undefined,
     h_realFeel_6: undefined,
+    d_day_1: undefined,
+    d_day_2: undefined,
+    d_day_3: undefined,
+    d_day_4: undefined,
+    d_day_5: undefined,
+    d_icon_1: undefined,
+    d_icon_2: undefined,
+    d_icon_3: undefined,
+    d_icon_4: undefined,
+    d_icon_5: undefined,
+    d_max_temp_1: undefined,
+    d_max_temp_2: undefined,
+    d_max_temp_3: undefined,
+    d_max_temp_4: undefined,
+    d_max_temp_5: undefined,
+    d_min_temp_1: undefined,
+    d_min_temp_2: undefined,
+    d_min_temp_3: undefined,
+    d_min_temp_4: undefined,
+    d_min_temp_5: undefined,
     error: undefined
   }
 
@@ -70,10 +92,20 @@ class App extends Component {
     const api_hourly = await fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${city}&key=${apiKey}&hours=24`);
     const dataHourly = await api_hourly.json();
 
+    const api_daily = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${apiKey}`);
+    const dataDaily = await api_daily.json();
+
+    let cityCurrentTime = data.data[0].timezone;
+    const api_timezone = await fetch(`http://api.timezonedb.com/v2.1/get-time-zone?key=QDZHADIQJ22I&format=json&by=zone&zone=${cityCurrentTime}`);
+    const timezoneData = await api_timezone.json();
+
     if (city) {
       console.log(data);
       console.log(dataHourly);
+      console.log(dataDaily);
+      console.log(timezoneData);
       this.setState({
+        cityCurrentTimeFormatted: timezoneData.formatted,
         icon: data.data[0].weather.icon,
         city: data.data[0].city_name,
         temperature: data.data[0].temp,
@@ -119,6 +151,26 @@ class App extends Component {
         h_icon_6: dataHourly.data[23].weather.icon,
         h_temp_6: dataHourly.data[23].temp,
         h_realFeel_6: dataHourly.data[23].app_temp,
+        d_day_1: dataDaily.data[1].datetime,
+        d_icon_1: dataDaily.data[1].weather.icon,
+        d_max_temp_1: dataDaily.data[1].max_temp,
+        d_min_temp_1: dataDaily.data[1].min_temp,
+        d_day_2: dataDaily.data[2].datetime,
+        d_icon_2: dataDaily.data[2].weather.icon,
+        d_max_temp_2: dataDaily.data[2].max_temp,
+        d_min_temp_2: dataDaily.data[2].min_temp,
+        d_day_3: dataDaily.data[3].datetime,
+        d_icon_3: dataDaily.data[3].weather.icon,
+        d_max_temp_3: dataDaily.data[3].max_temp,
+        d_min_temp_3: dataDaily.data[3].min_temp,
+        d_day_4: dataDaily.data[4].datetime,
+        d_icon_4: dataDaily.data[4].weather.icon,
+        d_max_temp_4: dataDaily.data[4].max_temp,
+        d_min_temp_4: dataDaily.data[4].min_temp,
+        d_day_5: dataDaily.data[5].datetime,
+        d_icon_5: dataDaily.data[5].weather.icon,
+        d_max_temp_5: dataDaily.data[5].max_temp,
+        d_min_temp_5: dataDaily.data[5].min_temp,
         error: ""
       });
     } else {
@@ -168,6 +220,26 @@ class App extends Component {
         h_realFeel_4: undefined,
         h_realFeel_5: undefined,
         h_realFeel_6: undefined,
+        d_day_1: undefined,
+        d_day_2: undefined,
+        d_day_3: undefined,
+        d_day_4: undefined,
+        d_day_5: undefined,
+        d_icon_1: undefined,
+        d_icon_2: undefined,
+        d_icon_3: undefined,
+        d_icon_4: undefined,
+        d_icon_5: undefined,
+        d_max_temp_1: undefined,
+        d_max_temp_2: undefined,
+        d_max_temp_3: undefined,
+        d_max_temp_4: undefined,
+        d_max_temp_5: undefined,
+        d_min_temp_1: undefined,
+        d_min_temp_2: undefined,
+        d_min_temp_3: undefined,
+        d_min_temp_4: undefined,
+        d_min_temp_5: undefined,
         error: "Please enter the values."
       });
     }
@@ -226,6 +298,7 @@ class App extends Component {
     }
   }
 
+
   render() {
     return (
       <div>
@@ -250,6 +323,9 @@ class App extends Component {
               <div className="card-body">
                 <div className="row">
                   <div className="current-weather-info col-md-4">
+                    <Weather
+                      cityCurrentTimeFormatted={this.state.cityCurrentTimeFormatted}
+                    />
                     <Icon
                       icon={this.state.icon}
                     />
@@ -302,8 +378,8 @@ class App extends Component {
             </div>
             <div id="collapseTwo" className="collapse" data-parent="#accordion">
               <div className="card-body">
-                <div className="row">
-                  <div className="col-md-2">
+                <div className="row h-row">
+                  <div className="hourly-info col-xs-2 col-sm-2 col-md-2">
                     <HourlyWeather
                       h_hour_1={this.state.h_hour_1}
                       h_icon_1={this.state.h_icon_1}
@@ -311,7 +387,7 @@ class App extends Component {
                       h_realFeel_1={this.state.h_realFeel_1}
                     />
                   </div>
-                  <div className="col-md-2">
+                  <div className="hourly-info col-xs-2 col-sm-2 col-md-2">
                     <HourlyWeather
                       h_hour_2={this.state.h_hour_2}
                       h_icon_2={this.state.h_icon_2}
@@ -319,7 +395,7 @@ class App extends Component {
                       h_realFeel_2={this.state.h_realFeel_2}
                     />
                   </div>
-                  <div className="col-md-2">
+                  <div className="hourly-info col-xs-2 col-sm-2 col-md-2">
                     <HourlyWeather
                       h_hour_3={this.state.h_hour_3}
                       h_icon_3={this.state.h_icon_3}
@@ -327,7 +403,7 @@ class App extends Component {
                       h_realFeel_3={this.state.h_realFeel_3}
                     />
                   </div>
-                  <div className="col-md-2">
+                  <div className="hourly-info col-xs-2 col-sm-2 col-md-2">
                     <HourlyWeather
                       h_hour_4={this.state.h_hour_4}
                       h_icon_4={this.state.h_icon_4}
@@ -335,7 +411,7 @@ class App extends Component {
                       h_realFeel_4={this.state.h_realFeel_4}
                     />
                   </div>
-                  <div className="col-md-2">
+                  <div className="hourly-info col-xs-2 col-sm-2 col-md-2">
                     <HourlyWeather
                       h_hour_5={this.state.h_hour_5}
                       h_icon_5={this.state.h_icon_5}
@@ -343,7 +419,7 @@ class App extends Component {
                       h_realFeel_5={this.state.h_realFeel_5}
                     />
                   </div>
-                  <div className="col-md-2">
+                  <div className="hourly-info col-xs-2 col-sm-2 col-md-2">
                     <HourlyWeather
                       h_hour_6={this.state.h_hour_6}
                       h_icon_6={this.state.h_icon_6}
@@ -361,101 +437,51 @@ class App extends Component {
               <a className="collapsed card-link" data-toggle="collapse" href="#collapseThree">Daily forecast</a>
             </div>
             <div id="collapseThree" className="collapse" data-parent="#accordion">
-              <div className="card-body"> Content for Accordion #3.</div>
-            </div>
-          </div>
-
-          {/* <div className="main-info container"> */}
-          {/* <div className="row">
-              <div className="current-weather-info col-md-4">
-                <Icon
-                  icon={this.state.icon}
-                />
-                <Weather
-                  city={this.state.city}
-                  temperature={this.state.temperature}
-                  realFeel={this.state.realFeel}
-                  description={this.state.description}
-                  error={this.state.error}
-                />
-              </div>
-              <div className="current-weather-info col-md-4">
-                <div>
-                  <AirQuality
-                    aqi={this.state.aqi}
-                  />
+              <div className="card-body">
+                <div className="row">
+                  <div className="daily-info">
+                    <DailyWeather
+                      d_day_1={this.state.d_day_1}
+                      d_icon_1={this.state.d_icon_1}
+                      d_max_temp_1={this.state.d_max_temp_1}
+                      d_min_temp_1={this.state.d_min_temp_1}
+                    />
+                  </div>
+                  <div className="daily-info">
+                    <DailyWeather
+                      d_day_2={this.state.d_day_2}
+                      d_icon_2={this.state.d_icon_2}
+                      d_max_temp_2={this.state.d_max_temp_2}
+                      d_min_temp_2={this.state.d_min_temp_2}
+                    />
+                  </div>
+                  <div className="daily-info">
+                    <DailyWeather
+                      d_day_3={this.state.d_day_3}
+                      d_icon_3={this.state.d_icon_3}
+                      d_max_temp_3={this.state.d_max_temp_3}
+                      d_min_temp_5={this.state.d_min_temp_3}
+                    />
+                  </div>
+                  <div className="daily-info">
+                    <DailyWeather
+                      d_day_4={this.state.d_day_4}
+                      d_icon_4={this.state.d_icon_4}
+                      d_max_temp_4={this.state.d_max_temp_4}
+                      d_min_temp_4={this.state.d_min_temp_4}
+                    />
+                  </div>
+                  <div className="daily-info">
+                    <DailyWeather
+                      d_day_5={this.state.d_day_5}
+                      d_icon_5={this.state.d_icon_5}
+                      d_max_temp_5={this.state.d_max_temp_5}
+                      d_min_temp_5={this.state.d_min_temp_5}
+                    />
+                  </div>
                 </div>
-                <div className="current-weather-basic-div">
-                  <Weather
-                    windSpeed={this.state.windSpeed}
-                    humidity={this.state.humidity}
-                    pressure={this.state.pressure}
-                    uv={this.state.uv}
-                  />
-                </div>
-              </div>
-              <div className="current-weather-info col-md-4">
-                <Weather
-                  partOfDay={this.state.partOfDay}
-                  windDirectionTxt={this.state.windDirectionTxt}
-                  windDirectionDeg={this.state.windDirectionDeg}
-                  dewPoint={this.state.dewPoint}
-                  clouds={this.state.clouds}
-                  visibility={this.state.visibility}
-                  solarRadiation={this.state.solarRadiation}
-                  rain={this.state.rain}
-                  snow={this.state.snow}
-                  sunrise={this.state.sunrise}
-                  sunset={this.state.sunset}
-                />
               </div>
             </div>
-          </div> */}
-          <div className="container">
-            {/* <div className="row">
-              <div className="col-md-2">
-                <HourlyWeather
-                  h_hour_1={this.state.h_hour_1}
-                  h_temp_1={this.state.h_temp_1}
-                  h_realFeel_1={this.state.h_realFeel_1}
-                />
-              </div>
-              <div className="col-md-2">
-                <HourlyWeather
-                  h_hour_2={this.state.h_hour_2}
-                  h_temp_2={this.state.h_temp_2}
-                  h_realFeel_2={this.state.h_realFeel_2}
-                />
-              </div>
-              <div className="col-md-2">
-                <HourlyWeather
-                  h_hour_3={this.state.h_hour_3}
-                  h_temp_3={this.state.h_temp_3}
-                  h_realFeel_3={this.state.h_realFeel_3}
-                />
-              </div>
-              <div className="col-md-2">
-                <HourlyWeather
-                  h_hour_4={this.state.h_hour_4}
-                  h_temp_4={this.state.h_temp_4}
-                  h_realFeel_4={this.state.h_realFeel_4}
-                />
-              </div>
-              <div className="col-md-2">
-                <HourlyWeather
-                  h_hour_5={this.state.h_hour_5}
-                  h_temp_5={this.state.h_temp_5}
-                  h_realFeel_5={this.state.h_realFeel_5}
-                />
-              </div>
-              <div className="col-md-2">
-                <HourlyWeather
-                  h_hour_6={this.state.h_hour_6}
-                  h_temp_6={this.state.h_temp_6}
-                  h_realFeel_6={this.state.h_realFeel_6}
-                />
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

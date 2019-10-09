@@ -29,3 +29,15 @@
    outline: none;
    box-shadow: none;
 }
+
+@media screen and (max-width: 600px) {
+
+    .city-input {
+        width: 75%;    
+    }
+
+    .search-btn {
+        width: 70px;
+    }
+    
+}
