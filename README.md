@@ -11,7 +11,7 @@ Weather data provides:
 AQI scale is ranged according to USA criteria:
 - 0 - 50 (Good AQI)
 - 51 - 100 (Moderate AQI)
-- 100+ (Poor AQI)
+- > 100 (Poor AQI)
 
 ## Routes
 
