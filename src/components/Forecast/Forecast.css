@@ -1,0 +1,65 @@
+#forecast {
+    width: 17%;
+    border-radius: 5px;
+    background: rgba(71, 102, 125, 0.7);
+    display: inline-block;
+    margin: 30px 1.5% 40px 1.5%;
+}
+
+@media screen 
+and (max-width: 767px)
+and (min-width: 460px) {
+
+    #forecast {
+        width: 19%;
+        margin: 100px 0.5% 40px 0.5%;
+    }
+}
+
+@media screen and (max-width: 459px) {
+
+    #forecast {
+        width: 19%;
+        margin: 235px 0.5% 40px 0.5%;
+    }
+}
+
+.day-item {
+    text-align: center;
+}
+
+.daily-detail {
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    margin: 15px 0px 15px 0px;
+}
+
+.day {
+    font-weight: bold;
+}
+
+.d-weather-icon-div {
+    margin: 0 auto; 
+}
+
+.d-weather-icon img{
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.d-max-temp {
+    color: orange;
+}
+
+.d-min-temp {
+    color: aqua;
+}
+
+@media screen and (max-width: 600px) {
+
+    .d-weather-icon img{
+        width: 40px;
+        height: 40px;
+    }
+}

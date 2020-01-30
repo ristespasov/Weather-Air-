@@ -1,0 +1,75 @@
+div {
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    vertical-align: middle;
+}
+
+#parrent {
+    margin-top: 20px;
+}
+
+#wrapper {
+    max-width: 600px;
+    height: 150px;
+    background-color: rgba(71, 102, 125, 0.7);
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#first-div {
+    width: 30%;
+}
+
+#second-div {
+    width: 45%;
+}
+
+#third-div {
+    width: 25%;
+}
+
+#cities-weather-icon img {
+    width: 90px;
+    height: 90px;
+}
+
+#cities-weather-description {
+    font-size: 12px;
+}
+
+#cities-temp {
+    height: 90px;
+    font-size: 90px;
+    margin: -35px 0 30px 0;
+}
+
+#cities-rf-temp {
+    color: lightgray;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#cities-min-temp {
+    color: aqua;
+    font-size: 25px
+}
+
+#separator {
+    font-size: 25px;
+}
+
+#cities-max-temp {
+    color: orange;
+    font-size: 25px;
+}
+
+.cities-detail-icon img{
+    width: 25px;
+    height: 25px;
+}
+
+.cities-detail-data {
+    font-size: 25px;
+    padding-left: 5px;
+    vertical-align: middle;
+}

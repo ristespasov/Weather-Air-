@@ -1,23 +1,28 @@
+.form-div {
+    width: 100%;
+    text-align: right;
+}
 
 .form {
-    margin-top: 40px;
+    max-width: 600px;
+    margin: 40px auto 0px auto;
 }
 
 .city-input {
-    width: 40%;
+    width: 80%;
     height: 40px;
     border-radius: 20px 0px 0px 20px;
     padding-left: 15px;
     border: solid 1px white;
 }
 
-.city-input:focus, .city-input:active {
-   outline: none;
-   box-shadow: none;
+.city-input:focus, city-input:active {
+    outline: none;
+    box-shadow: none;
 }
 
 .search-btn {
-    width: 100px;
+    width: 20%;
     height: 40px;
     border-radius: 0px 20px 20px 0px;
     background-color: rgb(60, 100, 130, 0.9);
@@ -26,18 +31,25 @@
 }
 
 .search-btn:focus, .search-btn:active {
-   outline: none;
-   box-shadow: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.search-btn:hover {
+    background-color: rgba(40, 85, 120, 0.9);
 }
 
 @media screen and (max-width: 600px) {
+
+    .form {
+        width: 90%;
+    }
 
     .city-input {
         width: 75%;    
     }
 
     .search-btn {
-        width: 70px;
-    }
-    
+        width: 25%;
+    }    
 }

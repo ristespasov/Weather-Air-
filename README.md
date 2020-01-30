@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather-Air-check
 
-## Available Scripts
+## About 
 
-In the project directory, you can run:
+A responsive, single-page, React.js web application that provides info about the weather forecast and air quality using API service. It provides data for current weather conditions, forecast for the following 5 days and air quality index. Air quality is presented through an animated circle, followed with the proper description and providing data for the main AQI (Air Quality Index).
 
-### `npm start`
+Weather data provides:
+- Current conditions: weather icon [custom component], temperature, real feel temperature, weather description, wind speed, humidity, pressure, uv index, part of day, wind direction, dew point, cloud coverage, visibility, solar radiation, rain and snow info, sunrise and sunset time.
+- Forecast [5 days]: day name, weather icon, min & max temperature. 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+AQI scale is ranged according to USA criteria:
+- 0 - 50 (Good AQI)
+- 51 - 100 (Moderate AQI)
+- 100+ (Poor AQI)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- Home page
+In progress...
 
-### `npm test`
+- Weather and Air 
+![](git-images/2.PNG)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Blog page
+In progress...
 
-### `npm run build`
+# Deployment
+In progress...
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies & Tools
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- React.js
+- CSS3
+- React Bootstrap 4
+- Ajax
+- Visual Studio Code
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Includes
 
-### `npm run eject`
+- API
+- Routing
+- React Hooks
+- Axios
+- React Moment
+- Progress bar
+- Forms 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Purpose
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Individual student project for the Seavus Code Academy
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Author
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Riste Spasov

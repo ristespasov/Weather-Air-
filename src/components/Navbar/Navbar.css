@@ -10,11 +10,17 @@
 
 .a {
     color: white ;
+    font-family: 'Quicksand', sans-serif;
     padding: 0px 15px 0px 15px;
 }
 
 .a:hover {
-    color: black !important;
+    color: black;
+}
+
+.active-link {
+    font-size: 17px;
+    font-weight: bolder;
 }
 
 #basic-nav-dropdown {
@@ -23,4 +29,14 @@
 
 .toggler {
     border-color: white !important;
+}
+
+@media screen 
+and (max-width: 767px) {
+    .a {
+        padding: 0px;
+    }
+    .nav-link {
+        padding: 15px 0px !important;
+    }
 }
