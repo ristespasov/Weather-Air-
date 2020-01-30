@@ -13,16 +13,16 @@ AQI scale is ranged according to USA criteria:
 - 51 - 100 (Moderate AQI)
 - 100+ (Poor AQI)
 
-- Home page
-In progress...
+## Routes
+
+- Home page in progress...
 
 - Weather and Air 
 ![](git-images/2.PNG)
 
-- Blog page
-In progress...
+- Blog page in progress...
 
-# Deployment
+## Deployment
 In progress...
 
 ## Technologies & Tools
