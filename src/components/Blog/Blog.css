@@ -1,0 +1,12 @@
+#message-wrapper{
+    width: 100%;
+    color: white;
+    font-family: 'Quicksand', 'sans-serif';
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+#message{
+    text-align: center;
+}
