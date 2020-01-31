@@ -1,4 +1,4 @@
-# Weather-Air-check
+# Weather and Air check
 
 ## About 
 
