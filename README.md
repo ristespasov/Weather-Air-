@@ -15,7 +15,8 @@ AQI scale is ranged according to USA criteria:
 
 ## Routes
 
-- Home page in progress...
+- Home page
+![](git-images/1.PNG)
 
 - Weather and Air 
 ![](git-images/2.PNG)

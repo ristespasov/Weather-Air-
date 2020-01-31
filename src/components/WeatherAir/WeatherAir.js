@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './Main.css';
+import './WeatherAir.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Form from '../Form/Form';
@@ -37,25 +37,6 @@ class App extends Component {
     forecastDays: undefined,
     day: undefined,
     error: undefined
-  }
-
-  getCitiesWeather = async () => {
-    axios.get(`https://api.weatherbit.io/v2.0/current?city=London&key=${apiKey}&units=${units}`)
-      .then(res => {
-        let data_citiesWeather = res.data;
-        console.log(data_citiesWeather);
-
-        this.setState({
-          icon: data_citiesWeather.data[0].weather.icon,
-          city: data_citiesWeather.data[0].city_name,
-          temperature: data_citiesWeather.data[0].temp,
-          realFeel: data_citiesWeather.data[0].app_temp,
-          description: data_citiesWeather.data[0].weather.description,
-          humidity: data_citiesWeather.data[0].rh,
-          uv: data_citiesWeather.data[0].uv,
-          aqi: data_citiesWeather.data[0].aqi
-        });
-      }).catch(err => { if (err) console.error("Cannot fetch data from API, ", err); });
   }
 
   getWeather = async (e) => {
