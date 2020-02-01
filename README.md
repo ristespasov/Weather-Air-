@@ -42,7 +42,8 @@ In progress...
 - React Hooks
 - Axios
 - React Moment
-- Progress bar
+- React Place Autocomplete
+- Progress Bar
 - Forms 
 
 ## Purpose
