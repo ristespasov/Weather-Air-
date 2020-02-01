@@ -2,7 +2,7 @@
 
 ## About 
 
-A responsive, single-page, React.js web application that provides info about the weather forecast and air quality using API service. It provides data for current weather conditions, forecast for the following 5 days and air quality index. Air quality is presented through an animated circle, followed with the proper description and providing data for the main AQI (Air Quality Index).
+A responsive, single-page, React.js web application that provides info about the weather forecast and air quality using Rest API service. It provides data for current weather conditions, forecast for the following 5 days and air quality index. Air quality is presented through an animated circular progress bar, followed with the proper description and providing data for the main AQI (Air Quality Index).
 
 Weather data provides:
 - Current conditions: weather icon [custom component], temperature, real feel temperature, weather description, wind speed, humidity, pressure, uv index, part of day, wind direction, dew point, cloud coverage, visibility, solar radiation, rain and snow info, sunrise and sunset time.
