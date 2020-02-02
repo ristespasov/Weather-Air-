@@ -97,6 +97,7 @@ export default class Home extends Component {
         const { icon_1, city_1, country_1, temperature_1, realFeel_1, description_1, humidity_1, uv_1, aqi_1,
             icon_2, city_2, country_2, temperature_2, realFeel_2, description_2, humidity_2, uv_2, aqi_2,
             icon_3, city_3, country_3, temperature_3, realFeel_3, description_3, humidity_3, uv_3, aqi_3 } = this.state;
+
         return (
             <div>
                 <Cities

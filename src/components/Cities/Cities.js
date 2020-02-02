@@ -28,7 +28,15 @@ const Cities = props => {
                     <div className="third-div d-inline-block">
                         <div>
                             <span className="cities-detail-icon"><img alt="icon" src={aqiIcon} /></span>
-                            <span className="cities-detail-data">{Math.round(aqi_1)}</span>
+                            {
+                                aqi_1 <= 50 ?
+                                    <span className="cities-detail-data" style={{ color: '#4dff4d' }}>{Math.round(aqi_1)}</span> :
+                                    aqi_1 <= 100 ?
+                                        <span className="cities-detail-data" style={{ color: '#ffff4d' }}>{Math.round(aqi_1)}</span> :
+                                        aqi_1 > 100 ?
+                                            <span className="cities-detail-data" style={{ color: '#CD5C5C' }}>{Math.round(aqi_1)}</span> :
+                                            <span className="cities-detail-data" style={{ color: '#fff' }}>{Math.round(aqi_1)}</span>
+                            }
                         </div>
                         <div>
                             <span className="cities-detail-icon"><img alt="icon" src={humidityIcon} /></span>
@@ -55,7 +63,15 @@ const Cities = props => {
                     <div className="third-div d-inline-block">
                         <div>
                             <span className="cities-detail-icon"><img alt="icon" src={aqiIcon} /></span>
-                            <span className="cities-detail-data">{Math.round(aqi_2)}</span>
+                            {
+                                aqi_2 <= 50 ?
+                                    <span className="cities-detail-data" style={{ color: '#4dff4d' }}>{Math.round(aqi_2)}</span> :
+                                    aqi_2 <= 100 ?
+                                        <span className="cities-detail-data" style={{ color: '#ffff4d' }}>{Math.round(aqi_2)}</span> :
+                                        aqi_2 > 100 ?
+                                            <span className="cities-detail-data" style={{ color: '#CD5C5C' }}>{Math.round(aqi_2)}</span> :
+                                            <span className="cities-detail-data" style={{ color: '#fff' }}>{Math.round(aqi_2)}</span>
+                            }
                         </div>
                         <div>
                             <span className="cities-detail-icon"><img alt="icon" src={humidityIcon} /></span>
@@ -82,7 +98,15 @@ const Cities = props => {
                     <div className="third-div d-inline-block">
                         <div>
                             <span className="cities-detail-icon"><img alt="icon" src={aqiIcon} /></span>
-                            <span className="cities-detail-data">{Math.round(aqi_3)}</span>
+                            {
+                                aqi_3 <= 50 ?
+                                    <span className="cities-detail-data" style={{ color: '#4dff4d' }}>{Math.round(aqi_3)}</span> :
+                                    aqi_3 <= 100 ?
+                                        <span className="cities-detail-data" style={{ color: '#ffff4d' }}>{Math.round(aqi_3)}</span> :
+                                        aqi_2 > 100 ?
+                                            <span className="cities-detail-data" style={{ color: '#CD5C5C' }}>{Math.round(aqi_3)}</span> :
+                                            <span className="cities-detail-data" style={{ color: '#fff' }}>{Math.round(aqi_3)}</span>
+                            }
                         </div>
                         <div>
                             <span className="cities-detail-icon"><img alt="icon" src={humidityIcon} /></span>

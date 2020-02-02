@@ -1,8 +1,9 @@
 import React from 'react';
 import './Navbar.css';
-import logoNav from '../../logo/logo-nav.png';
 import { Navbar, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import Toggle from '../Toggle/Toggle';
+import logoNav from '../../logo/logo-nav.png';
 
 const navbar = () => (
 

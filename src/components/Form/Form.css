@@ -16,10 +16,9 @@
     border: solid 1px white;
 }
 
-.suggestion {
+.suggestions {
     width: 80%;
-    margin: 0;
-    padding-left: 15px;
+    overflow-wrap: normal;
 }
 
 .city-input:focus, .city-input:active {

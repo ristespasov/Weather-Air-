@@ -46,6 +46,7 @@
     color: lightgray;
     font-size: 15px;
     font-weight: bold;
+    margin-top: -10px;;
 }
 
 .cities-detail-icon img{

@@ -1,4 +1,4 @@
-# Weather and Air check
+# Weather & Air check
 
 ## About 
 
@@ -18,7 +18,8 @@ AQI scale is ranged according to USA criteria:
 - Home page
 ![](git-images/1.PNG)
 
-- Weather and Air 
+- Weather and Air
+![](git-images/5.PNG) 
 ![](git-images/2.PNG)
 ![](git-images/3.PNG) ![](git-images/4.PNG)
 
@@ -37,7 +38,7 @@ In progress...
 
 ## Includes
 
-- API
+- API (weatherbit, google place, google maps)
 - Routing
 - React Hooks
 - Axios
