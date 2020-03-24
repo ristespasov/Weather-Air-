@@ -8,13 +8,13 @@
     height: 30px;
 }
 
-.a {
+.nav-link span {
     color: white ;
     font-family: 'Quicksand', sans-serif;
     padding: 0px 15px 0px 15px;
 }
 
-.a:hover {
+.nav-link span:hover {
     color: black;
 }
 
@@ -23,19 +23,16 @@
     font-weight: bolder;
 }
 
-#basic-nav-dropdown {
-    color: white !important;
-}
-
 .toggler {
     border-color: white !important;
 }
 
 @media screen 
 and (max-width: 767px) {
-    .a {
+    .nav-link span {
         padding: 0px;
     }
+
     .nav-link {
         padding: 15px 0px !important;
     }
