@@ -3,20 +3,20 @@ import './Weather.css';
 import Icon from '../Icon/Icon';
 import RoundProgressBar from '../RoundProgressBar/RoundProgressBar';
 
-import windSpeedIcon from "../../detail-icons/windspeed.png";
-import humidityIcon from "../../detail-icons/humidity.png";
-import pressureIcon from "../../detail-icons/pressure.png";
-import uvIcon from "../../detail-icons/uv.png";
-import partOfDayIcon from "../../detail-icons/pod.png";
-import windDirIcon from "../../detail-icons/winddir.png";
-import dewPointIcon from "../../detail-icons/dewpoint.png";
-import cloudCoverageIcon from "../../detail-icons/cloudcoverage.png";
-import visibilityIcon from "../../detail-icons/visibility.png";
-import solarRadIcon from "../../detail-icons/solarrad.png";
-import precipIcon from "../../detail-icons/precip.png";
-import snowfallIcon from "../../detail-icons/snowfall.png";
-import sunriseIcon from "../../detail-icons/sunrise.png";
-import sunsetIcon from "../../detail-icons/sunset.png";
+import windSpeedIcon from "../../assets/detail-icons/windspeed.png";
+import humidityIcon from "../../assets/detail-icons/humidity.png";
+import pressureIcon from "../../assets/detail-icons/pressure.png";
+import uvIcon from "../../assets/detail-icons/uv.png";
+import partOfDayIcon from "../../assets/detail-icons/pod.png";
+import windDirIcon from "../../assets/detail-icons/winddir.png";
+import dewPointIcon from "../../assets/detail-icons/dewpoint.png";
+import cloudCoverageIcon from "../../assets/detail-icons/cloudcoverage.png";
+import visibilityIcon from "../../assets/detail-icons/visibility.png";
+import solarRadIcon from "../../assets/detail-icons/solarrad.png";
+import precipIcon from "../../assets/detail-icons/precip.png";
+import snowfallIcon from "../../assets/detail-icons/snowfall.png";
+import sunriseIcon from "../../assets/detail-icons/sunrise.png";
+import sunsetIcon from "../../assets/detail-icons/sunset.png";
 
 const Weather = props => {
     return (

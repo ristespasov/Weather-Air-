@@ -3,7 +3,7 @@ import './Navbar.css';
 import { Navbar, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
-import logoNav from '../../logo/logo-nav.png';
+import logoNav from '../../assets/logo/logo-nav.png';
 
 const navbar = () => {
     return (

@@ -2,9 +2,9 @@ import React from 'react'
 import './Cities.css';
 import Icon from '../Icon/Icon';
 
-import aqiIcon from '../../detail-icons/aqi.png'
-import humidityIcon from '../../detail-icons/humidity.png';
-import uvIcon from '../../detail-icons/uv.png';
+import aqiIcon from '../../assets/detail-icons/aqi.png'
+import humidityIcon from '../../assets/detail-icons/humidity.png';
+import uvIcon from '../../assets/detail-icons/uv.png';
 
 const Cities = props => {
 
