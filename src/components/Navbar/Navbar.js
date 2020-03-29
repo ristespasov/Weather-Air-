@@ -2,6 +2,7 @@ import React from 'react';
 import './Navbar.css';
 import { Navbar, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+
 import logoNav from '../../logo/logo-nav.png';
 
 const navbar = () => {
@@ -17,7 +18,7 @@ const navbar = () => {
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
-    )
+    );
 }
 
 export default navbar;

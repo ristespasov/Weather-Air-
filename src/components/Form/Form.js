@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import './Form.css';
-import PlacesAutocomplete, {
-    geocodeByAddress
-} from 'react-places-autocomplete';
+import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
 
 const Form = props => {
     let options = {
@@ -49,7 +47,7 @@ const Form = props => {
                 )}
             </PlacesAutocomplete>
         </div>
-    )
+    );
 };
 
 export default Form;

@@ -13,15 +13,13 @@ export default class App extends Component {
     render() {
         return (
             <BrowserRouter>
-                <div>
-                    <Navbar />
-                    <Switch>
-                        <Route path="/" component={Home} exact />
-                        <Route path="/weather-and-air" component={WeatherAir} />
-                        <Route path="/blog" component={Blog} />
-                        <Route component={Error} />
-                    </Switch>
-                </div>
+                <Navbar />
+                <Switch>
+                    <Route path="/" component={Home} exact />
+                    <Route path="/weather-and-air" component={WeatherAir} />
+                    <Route path="/blog" component={Blog} />
+                    <Route component={Error} />
+                </Switch>
             </BrowserRouter>
         );
     };
