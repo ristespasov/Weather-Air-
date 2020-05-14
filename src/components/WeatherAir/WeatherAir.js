@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './WeatherAir.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Form from '../Form/Form';
@@ -12,7 +11,6 @@ let units = 'metric';
 
 class App extends Component {
   state = {
-    cityCurrentTimeFormatted: undefined,
     icon: undefined,
     city: undefined,
     temperature: undefined,
@@ -36,7 +34,8 @@ class App extends Component {
     sunset: undefined,
     forecastDays: undefined,
     day: undefined,
-    error: undefined
+    error: undefined,
+    degreeType: "celsius"
   }
 
   getWeather = async (e) => {
@@ -85,6 +84,12 @@ class App extends Component {
     }
   }
 
+  updateForecastDegree = event => {
+    this.setState({
+      degreeType: event.target.value
+    }, () => console.log(this.state))
+  }
+
   render() {
     return (
       <div>
@@ -113,7 +118,7 @@ class App extends Component {
           sunset={this.state.sunset}
           error={this.state.error}
         />
-        <div className="container">
+        <div className="container d-flex justify-content-between">
           {this.state.forecastDays && this.state.forecastDays.slice(1).map((day, index) => {
             return <Forecast day={day} key={index} />
           })}

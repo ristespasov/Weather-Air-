@@ -74,7 +74,7 @@ const RoundProgressBar = props => {
 }
 
 RoundProgressBar.defaultProps = {
-    size: 190,
+    size: 175,
     value: 0,
     max: 100,
     strokeWidth: 10,

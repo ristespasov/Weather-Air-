@@ -1,232 +1,65 @@
-/* ---------- CURRENT WEATHER-AIR PARRENT DIV ---------- */
 #weather-air-wrapper {
-    width: 100%;
+    flex-basis: 100%;
     height: 500px;
     margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
 }
 
 #weather-basic {
-    width: 30%;
+    flex-basis: 30%;
     height: 100%;
     border-radius: 5px;
     background: rgba(71, 102, 125, 0.7);
-    margin: 0 1.66%;
 }
 
 #air-weather-deatail {
-    width: 30%;
+    flex-basis: 30%;
     height: 100%;
-    margin: 0 1.66%;
 }
 
 #air-quality {
-    width: 100%;
-    height: 48.5%;
+    flex-basis: 100%;
+    height: 225px;
     border-radius: 5px;
     background: rgba(71, 102, 125, 0.7);
-    position: relative;
-}
-
-#circle-div {
     display: flex;
-    justify-content: space-around;
-    padding-top: 8%;
+    justify-content: center;
+    align-items: center;
 }
 
 #detail-div-1 {
-    width: 100%;
-    height: 44%;
+    flex-basis: 100%;
+    height: 225px;
     border-radius: 5px;
     background: rgba(71, 102, 125, 0.7);
-    margin: 11.5% 0 0 0;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 #detail-div-2 {
-    width: 30%;
+    flex-basis: 30%;
     height: 100%;
     border-radius: 5px;
     background: rgba(71, 102, 125, 0.7);
-    margin: 0 1.66%; 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-#detail-div-1-1 {
-    padding-top: 12px;
+/* ---------- Current weather Basic info ---------- */
+.current-weather-icon-wrapper {
+    margin-top: 10px;
+    text-align: center;
 }
 
-#detail-div-2-1 {
-    padding-top: 10px;
+.current-weather-icon-wrapper img {
+    width: 250px;
+    height: 250px;
 }
 
-@media screen 
-and (max-width: 1200px)
-and (min-width: 992px) {
-
-    #air-quality {
-        height: 49.5%;
-    }
-
-    #circle-div {
-        padding-top: 10%;
-    }
-}
-
-@media screen 
-and (max-width: 991px)
-and (min-width: 768px) {
-        
-    #weather-air-wrapper {
-        height: 400px;
-    }
-
-    #air-quality {
-        height: 50%;
-    }
-
-    #circle-div {
-        padding-top: 2.5%;
-    }
-
-    #detail-div-1-1 {
-        padding-top: 5px;
-    }
-
-    #detail-div-2-1 {
-        padding-top: 5px;
-    }
-}
-
-@media screen 
-and (max-width: 767px)
-and (min-width: 460px) {
-    
-    #air-weather-deatail {
-        width: 100%;
-        height: 200px;
-        margin: 10px 0 0 0;
-    }
-
-    #air-quality {
-        width: 49%;
-        height: 100%;
-        display: inline-block;
-        margin: 0 2% 0 0;
-    }
-
-    #circle-div {
-        padding-top: 2%;
-    }
-
-    #detail-div-1 {
-        width: 49%;
-        height: 100%;
-        display: inline-block;
-        margin: 0 auto;
-        float: right;
-    }
-
-    #detail-div-2 {
-        width: 100% !important;
-        height: 210px;
-        margin: 10px 0 0 0 !important;
-    }
-
-    #detail-div-2-1, #detail-div-2-2 {
-        width: 50%;
-        padding: 0;
-        display: inline-block;
-    }
-}
-
-@media screen 
-and (max-width: 459px) {
-    
-    #air-weather-deatail {
-        width: 100%;
-        margin: -10px 0 0 0; 
-    }
-
-    #air-quality {
-        width: 100%;
-        margin: 15px 0 0 0;
-    }
-
-    #detail-div-1 {
-        width: 100% !important;
-        height: 100px;
-        margin: 6px 0 0 0 !important;
-    }
-
-    #detail-div-1-1, #detail-div-1-2 {
-        width: 50%;
-        padding: 0;
-        display: inline-block;
-    }
-
-    #detail-div-2 {
-        width: 100% !important;
-        height: 210px;
-        margin: -131px 0 0 0 !important;
-    }
-
-    #detail-div-2-1, #detail-div-2-2 {
-        width: 50%;
-        padding: 0;
-        display: inline-block;
-    }
-}
-
-@media screen 
-and (max-width: 767px) {
-
-    #weather-basic {
-        width: 100%;
-        height: 160px;
-        margin: 0 auto;
-    }    
-}
-
-/* ---------- Current weather Icon ---------- */
-.current-weather-icon {
-    width: 200px;
-    height: 200px;
-    margin: 12px 0px 15px 60px;
-}
-
-@media screen 
-and (max-width: 1200px)
-and (min-width: 992px) {
-    .current-weather-icon {
-        margin: 18.5px 0 18.5px 40px;
-    }
-}
-
-@media screen 
-and (max-width: 991px)
-and (min-width: 768px) {
-
-    .current-weather-icon {
-        width: 160px;
-        height: 160px;
-        margin: 0px 0px 15px 20px;
-    }
-}
-
-@media screen 
-and (max-width: 767px) {
-
-    .current-weather-icon-div {
-        width: 30%;
-        margin-top: 0px;
-    }
-
-    .current-weather-icon {
-        width: 100px;
-        height: 100px;
-        margin: 0% 0% 0% 25%;
-    }
-}
-
-/* ---------- Current weather Basic & Detail info ---------- */
 .current-city {
     font-size: 25px;
     font-family: 'Quicksand', sans-serif;
@@ -256,22 +89,15 @@ and (max-width: 767px) {
     margin-left: 50px;
 }
 
+/* ---------- Current weather Detail info ---------- */
 .current-weather-detail {
-    margin: 15px 0 0px 40px;
-}
-
-@media screen 
-and (max-width: 767px) {
-    .current-weather-detail {
-        padding: 0 0 0 8%;
-    }
+    margin: 0 0 0 40px;
 }
 
 .detail-icon img {
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
-} 
+        width: 25px;
+        height: 25px;
+}
 
 .detail-txt {
     margin-left: 10px;
@@ -290,6 +116,10 @@ and (max-width: 767px) {
 @media screen 
 and (max-width: 1200px)
 and (min-width: 992px) {
+    .current-weather-icon-wrapper img {
+        width: 230px;
+        height: 230px;
+    }
 
     .current-city{
         font-size: 20px;
@@ -309,16 +139,38 @@ and (min-width: 992px) {
     }
 
     .current-weather-detail {
-    margin: 20px 0 0px 20px;
-}
+        margin: 0 0 0 20px;
+    }
 }
 
 @media screen 
 and (max-width: 991px)
 and (min-width: 768px) {
+    #weather-air-wrapper {
+        height: 400px;
+    }
+
+    #air-quality {
+        height: 180px;
+    }
+
+    #detail-div-1 {
+        height: 180px;
+        margin-top: 40px;
+    }
+
+    .current-weather-icon-wrapper img {
+        width: 190px;
+        height: 190px;
+    }
 
     .current-weather-basic {
         margin-left: 10px;
+    }
+
+    .detail-icon img {
+        width: 15px;
+        height: 15px;
     }
 
     .current-weather-detail {
@@ -346,14 +198,13 @@ and (min-width: 768px) {
     }
 
     .current-weather-detail {
-        margin: 13px 0 0px 10px;
+        margin: 0 0 0 10px;
     }
 
     .detail-icon img {
         width: 20px;
         height: 20px;
     } 
-
 
     .detail-txt {
         font-size: 13px;
@@ -366,25 +217,77 @@ and (min-width: 768px) {
 }
 
 @media screen 
+and (max-width: 767px)
+and (min-width: 450px) {
+    #air-weather-deatail {
+        flex-basis: 100%;
+        height: 190px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    #air-quality {
+        flex-basis: 49%;
+        height: 100%;
+    }
+
+    #detail-div-1 {
+        flex-basis: 49%;
+        height: 100%;
+        margin-top: 0;
+    }
+
+    #detail-div-1 p {
+        flex-basis: 100%;
+        padding-left: 8%;
+    }
+}
+
+@media screen 
 and (max-width: 767px) {
+    #weather-air-wrapper {
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    #weather-basic {
+        flex-basis: 100%;
+        height: 130px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 5px;
+    }
+
+    #detail-div-2 {
+        flex-basis: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr 1fr);
+        margin-top: 10px;
+    }
+
+    #detail-div-2 p {
+        padding: 5px 0 5px 8%;
+    }
+
+    .current-weather-icon-wrapper {
+        margin-top: 0px;
+        text-align: left;
+    }
+
+    .current-weather-icon-wrapper img {
+        width: 100px;
+        height: 100px;
+        margin-left: 15%;
+    }
 
     .current-weather-basic{
-        margin: 0px;
-    }
-
-    #current-time span{
-        font-size: 12px;   
-    }
-
-    #current-time {
-        text-align: center;
-        margin: 50px 0px -40px 0px;
+        margin-left: 10%;
     }
 
     #city-temp-rf {
-        width: 70%;
-        float: right;
-        margin: -100px 10% 0px 0px;
+        margin-right: 15%;
     }
 
     #city-temp-rf p{
@@ -420,97 +323,49 @@ and (max-width: 767px) {
 
     .detail-txt {
         font-size: 10px;
-        margin-left: 1px;
+        margin-left: 5px;
     }
 
     .detail-data {
         font-size: 10px;
     }
-
-    #ws-hum {
-        width: 50%;
-        display: inline-block;
-    }
-
-    #pr-uv {
-        width: 50%;
-        display: inline-block;
-    }
-}
-
-/* ---------- AIR QUALITY ---------- */
-/* ---------- Circle animation ---------- */
-#counter {
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 9;
-}
-
-#circle1 {
-    height: 165px;
-    width: 165px;
-    background-color:rgb(60, 100, 130, 0.5);
-    border-radius: 50%;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 1;
-}
-
-#shadowring {
-    height: 165px;
-    width: 165px;
-    border-radius: 50%;
-    box-shadow: 0 0 6px rgba(133, 131, 131, 0.5);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 99;
-}
-
-#circle2 {
-    height: 196px;
-    width: 196px;
-    background-color:rgba(187, 217, 219, 0.5);
-    border-radius: 50%;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: -1;
 }
 
 @media screen 
-and (max-width: 1200px)
-and (min-width: 992px) {
-
-    .current-weather-info {
-        margin: 15px 0px 0px 0px;
+and (max-width: 449px) {
+    #weather-air-wrapper {
+        height: auto;
+        flex-wrap: wrap;
     }
 
-    .current-weather-basic-div {
-        margin-top: 287px;
+    #air-weather-deatail {
+        flex-basis: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
     }
 
+    #air-quality {
+        flex-basis: 100%;
+        height: 190px;
+    }
+
+    #detail-div-1 {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr 1fr);
+        margin-top: 10px;
+    }
+
+    #detail-div-1 p {
+        padding: 5px 0 5px 10%;
+    }
+
+    #detail-div-2 {
+        flex-basis: 100%;
+        height: 200px;
+        margin-top: 10px;
+    }
 }
 
-@media screen 
-and (max-width: 991px)
-and (min-width: 768px) {
-
-    .circle-div {
-        margin-top: 100px;
-    }
-}
-
-@media screen 
-and (max-width: 767px) {
-
-    .circle-div {
-        margin-top: 150px;
-    }
-}
