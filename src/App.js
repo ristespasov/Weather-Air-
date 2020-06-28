@@ -1,26 +1,10 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React from 'react';
 
-import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
-import WeatherAir from './components/WeatherAir/WeatherAir';
-import Blog from './components/Blog/Blog';
+// ROUTER
+import Router from './router/Router';
 
-import Error from './components/Error/Error';
-
-export default class App extends Component {
-
-    render() {
-        return (
-            <BrowserRouter>
-                <Navbar />
-                <Switch>
-                    <Route path="/" component={Home} exact />
-                    <Route path="/weather-and-air" component={WeatherAir} />
-                    <Route path="/blog" component={Blog} />
-                    <Route component={Error} />
-                </Switch>
-            </BrowserRouter>
-        );
-    };
+const App = () => {
+    return <Router />
 };
+
+export default App;
