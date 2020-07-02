@@ -2,11 +2,7 @@
 
 ## About 
 
-A responsive, single-page, React.js web application that provides info about the weather forecast and air quality using Rest API service. It provides data for current weather conditions, forecast for the following 5 days and air quality index. Air quality is presented through an animated circular progress bar, followed with the proper description and providing data for the main AQI (Air Quality Index).
-
-Weather data provides:
-- Current conditions: weather icon [custom component], temperature, real feel temperature, weather description, wind speed, humidity, pressure, uv index, part of day, wind direction, dew point, cloud coverage, visibility, solar radiation, rain and snow info, sunrise and sunset time.
-- Forecast [5 days]: day name, weather icon, min & max temperature. 
+A responsive, single-page, React.js web application that provides info about the weather forecast and air quality using Rest API. It provides data for current weather conditions, forecast for the following 5 days and air quality index. Air quality is presented through an animated circular progress bar with data for the main AQI (Air Quality Index).
 
 AQI scale is ranged according to USA criteria:
 - 0 - 50 (Good AQI)
@@ -19,11 +15,10 @@ AQI scale is ranged according to USA criteria:
 ![](git-images/1.PNG)
 
 - Weather and Air
-![](git-images/5.PNG) 
 ![](git-images/2.PNG)
 ![](git-images/3.PNG) ![](git-images/4.PNG)
 
-- Blog page in progress...
+- News page in progress...
 
 ## Deployment
 In progress...
@@ -33,24 +28,13 @@ In progress...
 - React.js
 - CSS3
 - React Bootstrap 4
-- Ajax
 - Visual Studio Code
 
 ## Includes
 
-- API (weatherbit, google place, google maps)
+- API
 - Routing
 - React Hooks
 - Axios
 - React Moment
-- React Place Autocomplete
 - Progress Bar
-- Forms 
-
-## Purpose
-
-Individual student project for the Seavus Code Academy
-
-## Author
-
-Riste Spasov

@@ -68,7 +68,6 @@
     grid-area: city-detail; 
     display: flex;
     justify-content: space-around;
-    align-items: center;
 }
 
 .city-detail-icon img{

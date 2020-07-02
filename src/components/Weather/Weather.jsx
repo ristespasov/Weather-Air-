@@ -11,7 +11,7 @@ import RoundProgressBar from '../RoundProgressBar/RoundProgressBar';
 // CONTEXT
 import Context from '../../Context/Context';
 
-// ICONS
+// ASSETS
 import windSpeedIcon from "../../assets/detail-icons/windspeed.png";
 import humidityIcon from "../../assets/detail-icons/humidity.png";
 import pressureIcon from "../../assets/detail-icons/pressure.png";
@@ -57,20 +57,17 @@ const Weather = () => {
                 </div>
                 <div id="air-weather-deatail">
                     {/* AIR QUALITY */}
-
                     <div id="air-quality">
                         <div id="circle-div">
                             <RoundProgressBar
                                 value={aqi}
-                                stroke={aqi <= 50 ? '#73bc8d' : aqi <= 100 ? '#e7d748' : aqi > 100 ? '#CD5C5C' : '#fff'}
+                                stroke={aqi <= 50 ? '#73bc8d' : aqi <= 100 ? '#FFFF66' : aqi > 100 ? '#CD5C5C' : '#fff'}
                                 max={aqi > 100 ? aqi : 100}
                                 text={aqi <= 50 ? 'Good AQI' : aqi <= 100 ? 'Moderate AQI' : aqi > 100 ? 'Poor AQI' : 'N/A'}
                             />
                         </div>
                     </div>
-
                     {/* WEATHER DETAIL INFO 1*/}
-
                     <div id="detail-div-1">
                         <p className="current-weather-detail">
                             <span className="detail-icon"><img alt="icon" src={windSpeedIcon}></img></span>
@@ -80,7 +77,7 @@ const Weather = () => {
                         <p className="current-weather-detail">
                             <span className="detail-icon"><img alt="icon" src={humidityIcon}></img></span>
                             <span className="detail-txt">Humidity: </span>
-                            <span className="detail-data">{humidity}%</span>
+                            <span className="detail-data">{Math.round(humidity)}%</span>
                         </p>
                         <p className="current-weather-detail">
                             <span className="detail-icon"><img alt="icon" src={pressureIcon}></img></span>
@@ -102,10 +99,8 @@ const Weather = () => {
                             </span>
                         </p>
                     </div>
-
                 </div>
                 {/* WEATHER DETAIL INFO 2*/}
-
                 <div id="detail-div-2">
                     <p className="current-weather-detail">
                         <span className="detail-icon"><img alt="icon" src={partOfDayIcon}></img></span>
