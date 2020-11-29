@@ -67,7 +67,11 @@
 .city-detail { 
     grid-area: city-detail; 
     display: flex;
-    justify-content: space-around;
+}
+
+.city-detail div {
+    flex-basis: 33.3%;
+    padding-left: 10%;
 }
 
 .city-detail-icon img{
