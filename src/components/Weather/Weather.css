@@ -1,371 +1,232 @@
-#weather-air-wrapper {
-    flex-basis: 100%;
-    height: 500px;
-    margin-top: 40px;
+#search-weather-wrapper {
+    width: 880px;
+    margin: 50px auto 0 auto;
+    color: white;
+}
+
+.location-date-container div:first-child {
+    font-size: 30px;
+}
+
+.current-weather-detail-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.current-weather {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-basis: 50%;
+}
+
+.current-weather-icon {
+    align-items: center;
+}
+
+.current-weather-icon img {
+    width: 10.5em;
+}
+
+.current-weather-temp {
+    font-size: 120px;
+    margin-top: -40px;
+}
+
+.current-weather-description {
+    margin-top: -10px;
+}
+
+.current-weather-details {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    border-left: 0.5px solid white;
+}
+
+.current-weather-details .detail-data {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.current-weather-details .detail-data span{
+    width: 100%;
+    font-size: 30px;
+}
+
+.current-weather-details .detail-txt {
+    width: 100%;
+    color: lightgray;
+}
+
+.air-humidity-sun-container {
     display: flex;
     justify-content: space-between;
-}
-
-#weather-basic {
-    flex-basis: 30%;
-    height: 100%;
-    border-radius: 5px;
-    background: rgba(71, 102, 125, 0.7);
-}
-
-#air-weather-deatail {
-    flex-basis: 30%;
-    height: 100%;
-}
-
-#air-quality {
     flex-basis: 100%;
-    height: 225px;
+    margin-top: 50px;
+}
+
+.air-quality, .humidity, .sunrise-sunset {
+    width: 30%;
+    height: auto;
+    padding: 2% 0;
     border-radius: 5px;
-    background: rgba(71, 102, 125, 0.7);
+    background: rgba(0, 0, 0, 0.1);;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#detail-div-1 {
-    flex-basis: 100%;
-    height: 225px;
-    border-radius: 5px;
-    background: rgba(71, 102, 125, 0.7);
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-#detail-div-2 {
-    flex-basis: 30%;
-    height: 100%;
-    border-radius: 5px;
-    background: rgba(71, 102, 125, 0.7);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-/* ---------- Current weather Basic info ---------- */
-.current-weather-icon-wrapper {
-    margin-top: 10px;
     text-align: center;
 }
 
-.current-weather-icon-wrapper img {
-    width: 250px;
-    height: 250px;
+.progressbar-data:first-child {
+    font-size: 1rem;
+    margin-top: 60%;
 }
 
-.current-city {
-    font-size: 25px;
-    font-family: 'Quicksand', sans-serif;
-    color: white;
+.progressbar-data span {
+    font-size: 30px;
 }
 
-.current-temp {
-    font-size: 60px;
-    font-family: 'Quicksand', sans-serif;
-    color: white;
+.progressbar-txt {
+    color: lightgray;
 }
 
-.real-feel-temp {
-    font-size: 15px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: bold;
-    color: lightgrey;
+.sun-details {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 100%;
 }
 
-.current-weather-descritpion {
-    font-size: 15px;
-    font-family: 'Quicksand', sans-serif;
-    color: white;
+.sun-details span div:first-child {
+    font-size: 30px;
 }
 
-.current-weather-basic {
-    margin-left: 50px;
+.sun-details span div:last-child {
+    color: lightgray;
 }
 
-/* ---------- Current weather Detail info ---------- */
-.current-weather-detail {
-    margin: 0 0 0 40px;
-}
-
-.detail-icon img {
-        width: 25px;
-        height: 25px;
-}
-
-.detail-txt {
-    margin-left: 10px;
-    vertical-align: middle;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: bold;
-    color: white;
-}
-
-.detail-data {
-    vertical-align: middle;
-    font-family: 'Quicksand', sans-serif;
-    color: white;
-}
-
-@media screen 
-and (max-width: 1200px)
-and (min-width: 992px) {
-    .current-weather-icon-wrapper img {
-        width: 230px;
-        height: 230px;
+@media screen and (min-width: 701px) and (max-width: 991px) {
+    #search-weather-wrapper {
+        width: 90%;
     }
 
-    .current-city{
-        font-size: 20px;
+    .current-weather-icon img {
+        width: 120px;
     }
 
-    .current-weather-basic {
-        margin-left: 20px;
+    .current-weather-temp {
+        font-size: 80px;
+        margin-top: -20px;
     }
 
-    .detail-icon img {
-        width: 25px;
-        height: 25px;
+    .current-weather-details .detail-data {
+        margin-top: 4px;
     }
 
-    .detail-txt, .detail-data {
-        font-size: 15px;
+    .current-weather-details .detail-data span{
+        font-size: 22.5px;
     }
 
-    .current-weather-detail {
-        margin: 0 0 0 20px;
+    .current-weather-details .detail-txt {
+        font-size: 14px;
+    }
+
+    .air-quality, .humidity, .sunrise-sunset {
+        width: 32.9%;
+    }
+
+    .sun-details span div:first-child {
+        font-size: 22.5px;
+    }
+
+    .sun-details span div:last-child {
+        font-size: 14px;
     }
 }
 
-@media screen 
-and (max-width: 991px)
-and (min-width: 768px) {
-    #weather-air-wrapper {
-        height: 400px;
+@media screen and (max-width: 700px) {
+    #search-weather-wrapper {
+        width: 90%;
     }
 
-    #air-quality {
-        height: 180px;
+    .location-date-container div:first-child {
+        font-size: 22.5px;
     }
 
-    #detail-div-1 {
-        height: 180px;
+    .location-date-container div:last-child {
+        font-size: 14px;
+    }
+
+    .current-weather-detail-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .current-weather-icon img {
+        width: 120px;
+    }
+
+    .current-weather-temp {
+        font-size: 80px;
+        margin-top: -20px;
+    }
+
+    .current-weather-details {
+        width: 100%;
+        margin-top: 40px;
+        border-left: none;
+        border-top: 0.5px solid white;
+        border-bottom: 0.5px solid white;
+    }
+
+    .current-weather-details div {
+        margin: 5px 0;
+    }
+
+    .current-weather-details .detail-data span{
+        font-size: 22.5px;
+    }
+
+    .current-weather-details .detail-txt {
+        font-size: 14px;
+    }
+
+    .air-humidity-sun-container {
+        flex-wrap: wrap;
         margin-top: 40px;
     }
 
-    .current-weather-icon-wrapper img {
-        width: 190px;
-        height: 190px;
+    .air-quality, .humidity {
+        width: 49.5%;
+        margin-bottom: 1%;
     }
 
-    .current-weather-basic {
-        margin-left: 10px;
+    .sunrise-sunset {
+        width: 100%;
     }
 
-    .detail-icon img {
-        width: 15px;
-        height: 15px;
+    .sunrise-sunset div[data-test-id="CircularProgressbarWithChildren"] {
+        height: 170px;
     }
 
-    .current-weather-detail {
-        margin-left: 0px;
+    .progressbar-data span{
+        font-size: 22.5px;
     }
 
-    .current-time-data {
-        font-size: 12px;
+    .progressbar-txt {
+        font-size: 14px;
     }
 
-    .current-city {
-        font-size: 15px;
+    .sun-details {
+        width: 85%;
     }
 
-    .current-temp {
-        font-size: 40px;
+    .sun-details span div:first-child {
+        font-size: 22.5px;
     }
 
-    .real-feel-temp {
-        font-size: 12px;
-    }
-
-    .current-weather-descritpion {
-        font-size: 12px;
-    }
-
-    .current-weather-detail {
-        margin: 0 0 0 10px;
-    }
-
-    .detail-icon img {
-        width: 20px;
-        height: 20px;
-    } 
-
-    .detail-txt {
-        font-size: 13px;
-        margin-left: 5px;
-    }
-
-    .detail-data {
-        font-size: 13px;
+    .sun-details span div:last-child {
+        font-size: 14px;
     }
 }
-
-@media screen 
-and (max-width: 767px)
-and (min-width: 450px) {
-    #air-weather-deatail {
-        flex-basis: 100%;
-        height: 190px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin-top: 10px;
-    }
-
-    #air-quality {
-        flex-basis: 49%;
-        height: 100%;
-    }
-
-    #detail-div-1 {
-        flex-basis: 49%;
-        height: 100%;
-        margin-top: 0;
-    }
-
-    #detail-div-1 p {
-        flex-basis: 100%;
-        padding-left: 8%;
-    }
-}
-
-@media screen 
-and (max-width: 767px) {
-    #weather-air-wrapper {
-        height: auto;
-        flex-wrap: wrap;
-    }
-
-    #weather-basic {
-        flex-basis: 100%;
-        height: 130px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding-top: 5px;
-    }
-
-    #detail-div-2 {
-        flex-basis: 100%;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr 1fr);
-        margin-top: 10px;
-    }
-
-    #detail-div-2 p {
-        padding: 5px 0 5px 8%;
-    }
-
-    .current-weather-icon-wrapper {
-        margin-top: 0px;
-        text-align: left;
-    }
-
-    .current-weather-icon-wrapper img {
-        width: 100px;
-        height: 100px;
-        margin-left: 15%;
-    }
-
-    .current-weather-basic{
-        margin-left: 10%;
-    }
-
-    #city-temp-rf {
-        margin-right: 15%;
-    }
-
-    #city-temp-rf p{
-        text-align: right;
-        margin: 0;
-    }
-
-     .current-city {
-        font-size: 15px;
-    }
-
-    .current-temp {
-        font-size: 35px;
-    }
-
-    .real-feel-temp {
-        font-size: 12px;
-    }
-
-    .current-weather-descritpion {
-        margin-left: 8%;
-        font-size: 12px;
-    }
-
-    .current-weather-detail {
-        margin-left: 0px;
-    }
-
-    .detail-icon img {
-        width: 15px;
-        height: 15px;
-    } 
-
-    .detail-txt {
-        font-size: 10px;
-        margin-left: 5px;
-    }
-
-    .detail-data {
-        font-size: 10px;
-    }
-}
-
-@media screen 
-and (max-width: 449px) {
-    #weather-air-wrapper {
-        height: auto;
-        flex-wrap: wrap;
-    }
-
-    #air-weather-deatail {
-        flex-basis: 100%;
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 10px;
-    }
-
-    #air-quality {
-        flex-basis: 100%;
-        height: 190px;
-    }
-
-    #detail-div-1 {
-        height: auto;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr 1fr);
-        margin-top: 10px;
-    }
-
-    #detail-div-1 p {
-        padding: 5px 0 5px 10%;
-    }
-
-    #detail-div-2 {
-        flex-basis: 100%;
-        height: 200px;
-        margin-top: 10px;
-    }
-}
-

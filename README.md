@@ -21,13 +21,12 @@ AQI scale is ranged according to USA criteria:
 - News page in progress...
 
 ## Deployment
-In progress...
+https://competent-elion-075159.netlify.app/
 
 ## Technologies & Tools
 
 - React.js
 - CSS3
-- React Bootstrap 4
 - Visual Studio Code
 
 ## Includes
@@ -37,4 +36,5 @@ In progress...
 - React Hooks
 - Axios
 - React Moment
+- CountUp
 - Progress Bar

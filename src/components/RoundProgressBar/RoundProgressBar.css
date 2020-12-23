@@ -1,8 +1,0 @@
-@keyframes dash {
-  from { 
-    background-position:    0px; 
-  }
-  to { 
-    background-position: -450px; 
-  }
-}

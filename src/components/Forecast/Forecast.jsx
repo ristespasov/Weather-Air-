@@ -12,15 +12,15 @@ const Forecast = () => {
     const { forecast } = useContext(Context);
 
     return (
-        <div className="container d-flex justify-content-between">
+        <div id="search-forecast-wrapper">
             {forecast.slice(1).map((item, i) => (
-                <div id="forecast" key={i}>
-                    <p>{moment(item.valid_date).format('ddd')}</p>
+                <div className="forecast-item" key={i}>
+                    <div className="f-day">{moment(item.valid_date).format('ddd')}</div>
                     <div className="f-weather-icon-wrapper">
                         <Icon icon={item.weather.icon} />
                     </div>
-                    <p><span className="f-max-temp">{Math.round(item.max_temp)}° C</span></p>
-                    <p><span className="f-min-temp">{Math.round(item.min_temp)}° C</span></p>
+                    <div className="f-max-temp">{Math.round(item.max_temp)}°</div>
+                    <div className="f-min-temp">{Math.round(item.min_temp)}°</div>
                 </div>
             ))}
         </div>

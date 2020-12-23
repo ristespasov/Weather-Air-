@@ -10,10 +10,9 @@ const Form = () => {
 
     return (
         <div>
-            <div className="form-div">
-                <form className="form" onSubmit={getWeather}>
-                    <input placeholder="ex. New York City, US" className="city-input" type="text" name="city" />
-                    <button className="search-btn">Search</button>
+            <div className="searchbar">
+                <form onSubmit={getWeather} autoComplete="off">
+                    <input type="text" name="city" placeholder="ex. New York City, US" />
                 </form>
             </div>
         </div>

@@ -1,165 +1,129 @@
-.parrent {
+#current-city {
     display: flex;
-    height: 100vh;
+    height: calc(100vh - 70px);
     justify-content: center;
     align-items: center; 
-}
-
-.grid-container {
-    width: 500px;
-    height: 400px;
-    background-color: rgba(71, 102, 125, 0.7);
-    border-radius: 5px;
-    padding: 10px;
     color: white;
-    font-family: 'Quicksand', sans-serif; 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 1.8fr 0.6fr 0.6fr 0.7fr;
-    gap: 1px 1px;
-    grid-template-areas: "city city city city" "icon icon temperature temperature" "icon icon rf-temp rf-temp" "icon icon description description" "city-detail city-detail city-detail city-detail";
 }
 
-.city { 
-    grid-area: city;
-    font-size: 14px; 
+.current-city-weather-wrapper {
+    width: 500px;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.current-city-weather-wrapper .location-name {
+    margin-top: 50px;
+}
+
+.current-city-weather-wrapper .location-name span:first-of-type {
+    color: violet;
+}
+
+.current-city-weather-wrapper .current-city-weather-container {
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.current-city-weather-wrapper .weather-icon-container {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.current-city-weather-wrapper .weather-icon-container img {
+    width: 10.5em;
+}
+
+.current-city-weather-wrapper .current-city-weather-container .temp-descr {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.text { 
-    color: #ff6cff;
-    margin-right: 5px;
+.current-city-weather-wrapper .current-weather-temp {
+    font-size: 120px;
 }
 
-.icon { 
-    grid-area: icon; 
+.current-city-weather-wrapper .current-weather-description {
+    padding: 0 10px;
+}
+
+.current-city-weather-wrapper .current-city-weather-details {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    margin: 50px auto;
 }
 
-.icon img { 
-    width: 160px !important;
-    height: 160px !important;
+.current-city-weather-wrapper .detail-data span {
+    font-size: 30px;
+    margin-top: 20px;
 }
 
-.temperature { 
-    grid-area: temperature; 
-    font-size: 80px;
-    display: flex;
-    align-items: center;
-}
-
-.rf-temp { 
-    grid-area: rf-temp; 
-    font-size: 15px;
-    font-weight: bold;
+.current-city-weather-wrapper .detail-txt {
     color: lightgray;
 }
 
-.description { 
-    grid-area: description; 
-    font-size: 15px;
-}
-
-.city-detail { 
-    grid-area: city-detail; 
-    display: flex;
-}
-
-.city-detail div {
-    flex-basis: 33.3%;
-    padding-left: 10%;
-}
-
-.city-detail-icon img{
-    width: 30px;
-    height: 30px;
-}
-
-.city-detail-data {
-    font-size: 25px;
-    padding-left: 5px;
-    vertical-align: middle;
-}
-
-@media screen and (max-width: 768px) {
-    .grid-container {
-        height: 350px;
-    }
-
-    .icon img { 
-        width: 140px !important;
-        height: 140px !important;
-        margin: 0 !important;
-    }
-
-    .temperature { 
-        font-size: 70px;
-    }
-
-    .city-detail-icon img{
-        width: 30px;
-        height: 30px;
-    }
-
-    .city-detail-data {
-        font-size: 25px;
-        padding-left: 5px;
-        vertical-align: middle;
-    }
-}
-
 @media screen and (max-width: 600px) {
-    .grid-container {
-        height: 400px;
-        grid-template-rows: 0.5fr 1.5fr 1.5fr 0.6fr 0.6fr 1fr;
-        grid-template-areas:
-        "city city city city"
-        "icon icon icon icon"
-        "icon icon icon icon"
-        "temperature temperature temperature temperature"
-        "rf-temp rf-temp rf-temp rf-temp"
-        "description description description description"
-        "city-detail city-detail city-detail city-detail";
+    .current-city-weather-wrapper {
+        width: 90%;
     }
 
-    .city { 
+    .current-city-weather-wrapper .weather-icon-container {
+        width: 50%;
+    }
+
+    .current-city-weather-wrapper .location-name {
+        display: flex;
         flex-direction: column;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
     }
 
-    .icon img { 
-        width: 120px !important;
-        height: 120px !important;
-        margin: 0 !important;
+    .current-city-weather-wrapper .current-city-weather-container {
+        margin-top: 20px;
     }
 
-    .temperature { 
-        font-size: 60px;
-        justify-content: center;
+    .current-city-weather-wrapper .weather-icon-container img {
+        width: 120px;
     }
 
-    .rf-temp {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .current-city-weather-wrapper .current-city-weather-container .temp-descr {
+        width: 50%;
     }
 
-    .description { 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .current-city-weather-wrapper .current-weather-temp {
+        font-size: 64px;
+        margin-top: 0;
     }
 
-    .city-detail-icon img{
-        width: 20px;
-        height: 20px;
+    .current-city-weather-wrapper .current-weather-description {
+        font-size: 14px;
     }
 
-    .city-detail-data {
-        font-size: 18px;
-        padding-left: 5px;
+    .current-city-weather-wrapper .current-city-weather-details {
+        margin: 20px auto;
     }
+
+    .current-city-weather-wrapper .detail-data span {
+        font-size: 22.5px;
+        margin-top: 20px;
+    }
+
+    .current-city-weather-wrapper .detail-txt {
+        font-size: 14px;
+    }
+
+
 }

@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 // AXIOS
 import axios from 'axios';
 
@@ -8,14 +6,14 @@ import axios from 'axios';
 import Context from '../../Context/Context';
 
 // COMPONENTS
-import Form from '../Form/Form';
-import Weather from '../Weather/Weather';
-import Forecast from '../Forecast/Forecast';
-import Loading from '../Loading/Loading';
+import Form from '../../components/Form/Form';
+import Weather from '../../components/Weather/Weather';
+import Forecast from '../../components/Forecast/Forecast';
+import Loading from '../../components/Loading/Loading';
 
 const apiKey = 'ce96de25f5984c07a75e087c2285c9b1';
 const units = 'metric';
-const App = () => {
+const SearchWeather = () => {
 
   const [weather, setWeather] = useState();
   const [forecast, setForecast] = useState([]);
@@ -41,6 +39,7 @@ const App = () => {
         setWeather({
           icon: data.weather.icon,
           city: data.city_name,
+          country: data.country_code,
           temperature: data.temp,
           realFeel: data.app_temp,
           weatherDescription: data.weather.description,
@@ -49,19 +48,15 @@ const App = () => {
           pressure: data.pres,
           uv: data.uv,
           partOfDay: data.pod,
+          rain: data.precip,
           windDirectionTxt: data.wind_cdir,
           windDirectionDeg: data.wind_dir,
-          dewPoint: data.dewpt,
-          clouds: data.clouds,
-          visibility: data.vis,
-          solarRadiation: data.solar_rad,
-          rain: data.precip,
-          snow: data.snow,
           sunrise: data.sunrise,
           sunset: data.sunset,
           aqi: data.aqi
         });
         setForecast(dataForecast)
+        console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -74,10 +69,10 @@ const App = () => {
       <Context.Provider value={{ getWeather, weather, forecast }}>
         <Form />
         {loading ? <Loading /> : weather ? <Weather /> : null}
-        {loading ? <Loading /> : forecast ? <Forecast /> : null}
+        {loading ? <Loading /> : weather && forecast ? <Forecast /> : null}
       </Context.Provider>
     </div>
   );
 };
 
-export default App;
+export default SearchWeather;

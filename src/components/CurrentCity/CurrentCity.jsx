@@ -10,45 +10,51 @@ import CountUp from 'react-countup';
 // COMPONENTS
 import Icon from '../Icon/Icon';
 
-// ASSETS
-import aqiIcon from '../../assets/detail-icons/aqi.png'
-import humidityIcon from '../../assets/detail-icons/humidity.png';
-import uvIcon from '../../assets/detail-icons/uv.png';
-
 const CurrentCity = () => {
     const { currentCity } = useContext(Context);
-    const { icon, city, country, temperature, realFeel, weatherDescription, humidity, uv, aqi } = currentCity;
+    const { icon, city, country, temperature, weatherDescription, humidity, uv, aqi } = currentCity;
 
     return (
-        <div className="parrent container">
-            <div className="grid-container">
-                <div className="city">
+        <div id="current-city">
+            <div className="current-city-weather-wrapper">
+                <div className="location-name">
                     <span className="text">Weather for your current location: </span><span className="city-name">{city}, {country}</span>
                 </div>
-                <div className="icon">
-                    <Icon icon={icon} />
+                <div className="current-city-weather-container">
+                    <div className="weather-icon-container">
+                        <Icon icon={icon} />
+                    </div>
+                    <div className="temp-descr">
+                        <div className="current-weather-temp"><CountUp start={0} end={Math.round(temperature)} duration={3} />°</div>
+                        <div className="current-weather-description">{weatherDescription}</div>
+                    </div>
                 </div>
-                <div className="temperature">
-                    <span><CountUp start={0} end={Math.round(temperature)} duration={3} />° C</span>
-                </div>
-                <div className="rf-temp">
-                    <span>Real feel: {Math.round(realFeel)}° C</span>
-                </div>
-                <div className="description">
-                    <span>{weatherDescription}</span>
-                </div>
-                <div className="city-detail">
+                <div className="current-city-weather-details">
                     <div>
-                        <span className="city-detail-icon"><img alt="icon" src={aqiIcon} /></span>
-                        <span className="city-detail-data" style={aqi <= 50 ? { color: '#73bc8d' } : aqi <= 100 ? { color: '#e7d748' } : aqi > 100 ? { color: '#CD5C5C' } : { color: '#fff' }}><CountUp start={0} end={Math.round(aqi)} duration={3} /></span>
+                        <div className="detail-data">
+                            <span style={aqi <= 50 ? { color: '#73bc8d' } : aqi <= 100 ? { color: '#e7d748' } : aqi > 100 ? { color: '#B03A2E' } : { color: '#fff' }}>
+                                {Math.round(aqi)}
+                            </span>
+                            {aqi <= 50 ? ' Good' : aqi <= 100 ? ' Moderate' : aqi > 100 ? ' Poor' : 'N/A'}
+                        </div>
+                        <div className="detail-txt">AQI</div>
                     </div>
                     <div>
-                        <span className="city-detail-icon"><img alt="icon" src={humidityIcon} /></span>
-                        <span className="city-detail-data"><CountUp start={0} end={humidity} suffix={"%"} duration={3} /></span>
+                        <div className="detail-data"><span>{humidity}</span>%</div>
+                        <div className="detail-txt">Humidity</div>
                     </div>
                     <div>
-                        <span className="city-detail-icon"><img alt="icon" src={uvIcon} /></span>
-                        <span className="city-detail-data"><CountUp start={0} end={Math.round(uv)} duration={2} /></span>
+                        <div className="detail-data">
+                            <span>{Math.round(uv)}</span>
+                            {uv === 0 ? ' None'
+                                : uv <= 2 ? ' Low'
+                                    : uv <= 5 ? ' Medium'
+                                        : uv <= 7 ? ' High'
+                                            : uv <= 10 ? ' Very High'
+                                                : uv > 10 ? ' Extreme'
+                                                    : null}
+                        </div>
+                        <div className="detail-txt">UV</div>
                     </div>
                 </div>
             </div>

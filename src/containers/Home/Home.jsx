@@ -7,8 +7,8 @@ import axios from 'axios';
 import Context from '../../Context/Context';
 
 // COMPONENTS
-import CurrentCity from '../CurrentCity/CurrentCity';
-import Loading from '../Loading/Loading';
+import CurrentCity from '../../components/CurrentCity/CurrentCity';
+import Loading from '../../components/Loading/Loading';
 
 const apiKey = 'ce96de25f5984c07a75e087c2285c9b1';
 const units = 'metric';

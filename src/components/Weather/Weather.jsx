@@ -1,157 +1,174 @@
 import React, { useContext } from "react";
 import './Weather.css';
+import moment from 'moment';
+
+import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 // COUNTUP
 import CountUp from 'react-countup';
 
 // COMPONENTS
 import Icon from '../Icon/Icon';
-import RoundProgressBar from '../RoundProgressBar/RoundProgressBar';
 
 // CONTEXT
 import Context from '../../Context/Context';
 
-// ASSETS
-import windSpeedIcon from "../../assets/detail-icons/windspeed.png";
-import humidityIcon from "../../assets/detail-icons/humidity.png";
-import pressureIcon from "../../assets/detail-icons/pressure.png";
-import uvIcon from "../../assets/detail-icons/uv.png";
-import partOfDayIcon from "../../assets/detail-icons/pod.png";
-import windDirIcon from "../../assets/detail-icons/winddir.png";
-import dewPointIcon from "../../assets/detail-icons/dewpoint.png";
-import cloudCoverageIcon from "../../assets/detail-icons/cloudcoverage.png";
-import visibilityIcon from "../../assets/detail-icons/visibility.png";
-import solarRadIcon from "../../assets/detail-icons/solarrad.png";
-import precipIcon from "../../assets/detail-icons/precip.png";
-import snowfallIcon from "../../assets/detail-icons/snowfall.png";
-import sunriseIcon from "../../assets/detail-icons/sunrise.png";
-import sunsetIcon from "../../assets/detail-icons/sunset.png";
-
 const Weather = () => {
     const { weather } = useContext(Context);
-    const { icon, city, temperature, realFeel, weatherDescription, windSpeed, humidity, pressure, uv, partOfDay,
-        windDirectionTxt, windDirectionDeg, dewPoint, clouds, visibility, solarRadiation, rain, snow, sunrise, sunset, aqi } = weather;
+    const { icon, city, country, temperature, realFeel, weatherDescription, windSpeed, humidity, rain, pressure, uv, windDirectionTxt, windDirectionDeg, sunrise, sunset, aqi } = weather;
+
+    // parse time using 24-hour clock and use UTC to prevent DST issues
+    var start = moment.utc(sunrise, "HH");
+    var end = moment.utc(sunset, "HH");
+    var currentTime = moment().format("HH");
+    var passedHours = moment.utc(currentTime, "HH");
+
+    // account for crossing over to midnight the next day
+    if (end.isBefore(start)) end.add(1, 'day');
+
+    // calculate the duration
+    var durationSunriseSunset = moment.duration(end.diff(start));
+    var progressSunriseSunset = moment.duration(passedHours.diff(start));
+
+    // format a string result
+    var totalTime = moment.utc(+durationSunriseSunset).format("HH");
+    var totalTimeInt = parseInt(totalTime, 10);
+
+    var passed = moment.utc(+progressSunriseSunset).format("HH");
+    var passedInt = parseInt(passed, 10);
+
+    var sunPathValue;
+    passedInt >= totalTimeInt ? sunPathValue = 100 : sunPathValue = 100 / totalTimeInt * passedInt;
 
     return (
         <div>
-            <div id="weather-air-wrapper" className="container">
-                {/* WEATHER BASIC INFO */}
-                <div id="weather-basic">
-                    <div className="current-weather-icon-div">
-                        <span className="current-weather-icon"><Icon icon={icon} /></span>
-                    </div>
-                    <div id="city-temp-rf">
-                        <p className="current-weather-basic">
-                            <span className="current-city">{city}</span>
-                        </p>
-                        <p className="current-weather-basic">
-                            <span className="current-temp"><CountUp start={0} end={Math.round(temperature)} duration={3} />° C</span>
-                        </p>
-                        <p className="current-weather-basic">
-                            <span className="real-feel-temp">Real feel: {Math.round(realFeel)}° C</span>
-                        </p>
-                    </div>
-                    <p className="current-weather-basic">
-                        <span className="current-weather-descritpion">{weatherDescription}</span>
-                    </p>
+            <div id="search-weather-wrapper">
+                <div className="location-date-container">
+                    <div>{city}, {country}</div>
+                    <div>{`${moment().format('dddd, MMMM Do YYYY')} at ${moment().format('HH:mm')} `}</div>
                 </div>
-                <div id="air-weather-deatail">
-                    {/* AIR QUALITY */}
-                    <div id="air-quality">
-                        <div id="circle-div">
-                            <RoundProgressBar
-                                value={aqi}
-                                stroke={aqi <= 50 ? '#73bc8d' : aqi <= 100 ? '#FFFF66' : aqi > 100 ? '#CD5C5C' : '#fff'}
-                                max={aqi > 100 ? aqi : 100}
-                                text={aqi <= 50 ? 'Good AQI' : aqi <= 100 ? 'Moderate AQI' : aqi > 100 ? 'Poor AQI' : 'N/A'}
-                            />
+                <div className="current-weather-detail-container">
+                    <div className="current-weather">
+                        <div className="current-weather-icon">
+                            <Icon icon={icon} />
+                        </div>
+                        <div>
+                            <div className="current-weather-temp"><CountUp start={0} end={Math.round(temperature)} duration={3} />°</div>
+                            <div className="current-weather-description">{weatherDescription}</div>
                         </div>
                     </div>
-                    {/* WEATHER DETAIL INFO 1*/}
-                    <div id="detail-div-1">
-                        <p className="current-weather-detail">
-                            <span className="detail-icon"><img alt="icon" src={windSpeedIcon}></img></span>
-                            <span className="detail-txt">Wind speed: </span>
-                            <span className="detail-data">{Math.round(windSpeed)} m/s</span>
-                        </p>
-                        <p className="current-weather-detail">
-                            <span className="detail-icon"><img alt="icon" src={humidityIcon}></img></span>
-                            <span className="detail-txt">Humidity: </span>
-                            <span className="detail-data">{Math.round(humidity)}%</span>
-                        </p>
-                        <p className="current-weather-detail">
-                            <span className="detail-icon"><img alt="icon" src={pressureIcon}></img></span>
-                            <span className="detail-txt">Pressure: </span>
-                            <span className="detail-data">{Math.round(pressure)} mb</span>
-                        </p>
-                        <p className="current-weather-detail">
-                            <span className="detail-icon"><img alt="icon" src={uvIcon}></img></span>
-                            <span className="detail-txt">UV Index: </span>
-                            <span className="detail-data">{Math.round(uv)} </span>
-                            <span className="detail-data">
-                                {uv === 0 ? '(None)'
-                                    : uv <= 2 ? '(Low)'
-                                        : uv <= 5 ? '(Medium)'
-                                            : uv <= 7 ? '(High)'
-                                                : uv <= 10 ? '(Very High)'
-                                                    : uv > 10 ? '(Extreme)'
+                    <div className="current-weather-details">
+                        <div>
+                            <div className="detail-data"><span>{Math.round(realFeel)}°</span></div>
+                            <div className="detail-txt">Real feel</div>
+                            <div className="detail-data"><span>{Math.round(pressure)}</span> mb</div>
+                            <div className="detail-txt">Pressure</div>
+                        </div>
+                        <div>
+                            <div className="detail-data"><span>{Math.round(rain)}</span> mm/hr</div>
+                            <div className="detail-txt">Rain</div>
+                            <div className="detail-data">
+                                <span>{Math.round(uv)}</span>
+                                {uv === 0 ? ' None'
+                                    : uv <= 2 ? ' Low'
+                                        : uv <= 5 ? ' Medium'
+                                            : uv <= 7 ? ' High'
+                                                : uv <= 10 ? ' Very High'
+                                                    : uv > 10 ? ' Extreme'
                                                         : null}
-                            </span>
-                        </p>
+                            </div>
+                            <div className="detail-txt">UV</div>
+                        </div>
+                        <div>
+                            <div className="detail-data"><span>{Math.round(windSpeed)}</span> m/s</div>
+                            <div className="detail-txt">Wind speed</div>
+                            <div className="detail-data"><span>{Math.round(windDirectionDeg)}°</span> {windDirectionTxt}</div>
+                            <div className="detail-txt">Wind direction</div>
+                        </div>
                     </div>
                 </div>
-                {/* WEATHER DETAIL INFO 2*/}
-                <div id="detail-div-2">
-                    <p className="current-weather-detail">
-                        <span className="detail-icon"><img alt="icon" src={partOfDayIcon}></img></span>
-                        <span className="detail-txt">Part of day: </span>
-                        <span className="detail-data">{partOfDay === 'd' ? 'Day' : 'Night'}</span>
-                    </p>
-                    <p className="current-weather-detail">
-                        <span className="detail-icon"><img alt="icon" src={windDirIcon}></img></span>
-                        <span className="detail-txt">Wind direction: </span>
-                        <span className="detail-data">{windDirectionTxt}, {Math.round(windDirectionDeg)}°</span>
-                    </p>
-                    <p className="current-weather-detail">
-                        <span className="detail-icon"><img alt="icon" src={dewPointIcon}></img></span>
-                        <span className="detail-txt">Dew point: </span>
-                        <span className="detail-data">{Math.round(dewPoint)}° C</span>
-                    </p>
-                    <p className="current-weather-detail">
-                        <span className="detail-icon"><img alt="icon" src={cloudCoverageIcon}></img></span>
-                        <span className="detail-txt">Cloud coverage: </span>
-                        <span className="detail-data">{clouds}%</span>
-                    </p>
-                    <p className="current-weather-detail">
-                        <span className="detail-icon"><img alt="icon" src={visibilityIcon}></img></span>
-                        <span className="detail-txt">Visibility: </span>
-                        <span className="detail-data">{Math.round(visibility)} km</span>
-                    </p>
-                    <p className="current-weather-detail">
-                        <span className="detail-icon"><img alt="icon" src={solarRadIcon}></img></span>
-                        <span className="detail-txt">Solar radiation: </span>
-                        <span className="detail-data">{Math.round(solarRadiation)} W/m²</span>
-                    </p>
-                    <p className="current-weather-detail">
-                        <span className="detail-icon"><img alt="icon" src={precipIcon}></img></span>
-                        <span className="detail-txt">Rain: </span>
-                        <span className="detail-data">{Math.round(rain)} mm/hr</span>
-                    </p>
-                    <p className="current-weather-detail">
-                        <span className="detail-icon"><img alt="icon" src={snowfallIcon}></img></span>
-                        <span className="detail-txt">Snow: </span>
-                        <span className="detail-data">{Math.round(snow)} mm/hr</span>
-                    </p>
-                    <p className="current-weather-detail">
-                        <span className="detail-icon"><img alt="icon" src={sunriseIcon}></img></span>
-                        <span className="detail-txt">Sunrise: </span>
-                        <span className="detail-data">{sunrise}</span>
-                    </p>
-                    <p className="current-weather-detail">
-                        <span className="detail-icon"><img alt="icon" src={sunsetIcon}></img></span>
-                        <span className="detail-txt">Sunset: </span>
-                        <span className="detail-data">{sunset}</span>
-                    </p>
+                <div className="air-humidity-sun-container">
+                    <div className="air-quality">
+                        <CircularProgressbarWithChildren
+                            value={aqi}
+                            strokeWidth={5}
+                            styles={{
+                                root: { width: '70%' },
+                                path: {
+                                    stroke: aqi <= 50 ? '#73bc8d' : aqi <= 100 ? '#FFFF66' : aqi > 100 ? '#B03A2E' : '#fff',
+                                    transition: 'stroke-dashoffset 0.5s ease 0s',
+                                },
+                                trail: {
+                                    stroke: 'rgba(0, 0, 0, 0.1)'
+                                },
+                                text: {
+                                    fill: '#fff'
+                                }
+                            }}
+                        >
+                            <div className="progressbar-data"><span>{aqi}</span></div>
+                            <div className="progressbar-data">{aqi <= 50 ? 'Good' : aqi <= 100 ? 'Moderate' : aqi > 100 ? 'Poor' : 'N/A'}</div>
+                            <div className="progressbar-txt">AQI</div>
+                        </CircularProgressbarWithChildren>
+                    </div>
+                    <div className="humidity">
+                        <CircularProgressbarWithChildren
+                            value={humidity}
+                            strokeWidth={5}
+                            styles={{
+                                root: { width: '70%' },
+                                path: {
+                                    stroke: '#3e98c7',
+                                    transition: 'stroke-dashoffset 0.5s ease 0s',
+                                },
+                                trail: {
+                                    stroke: 'rgba(0, 0, 0, 0.1)'
+                                },
+                                text: {
+                                    fill: '#fff'
+                                }
+                            }}
+                        >
+                            <div className="progressbar-data"><span>{Math.round(humidity)}</span>%</div>
+                            <div className="progressbar-txt">Humidity</div>
+                        </CircularProgressbarWithChildren>
+                    </div>
+                    <div className="sunrise-sunset">
+                        <CircularProgressbarWithChildren
+                            value={sunPathValue}
+                            strokeWidth={5}
+                            circleRatio={0.5}
+                            styles={{
+                                root: { width: '70%' },
+                                path: {
+                                    stroke: '#FFFF66',
+                                    transition: 'stroke-dashoffset 0.5s ease 0s',
+                                    transform: 'rotate(-0.25turn)',
+                                    transformOrigin: 'center center',
+                                },
+                                trail: {
+                                    stroke: 'rgba(0, 0, 0, 0.1)',
+                                    transform: 'rotate(-0.25turn)',
+                                    transformOrigin: 'center center',
+                                },
+                                text: {
+                                    fill: '#fff'
+                                }
+                            }}
+                        >
+                            <div className="sun-details">
+                                <span>
+                                    <div>{sunrise}</div>
+                                    <div>Sunrise</div>
+                                </span>
+                                <span>
+                                    <div>{sunset}</div>
+                                    <div>Sunset</div>
+                                </span>
+                            </div>
+                        </CircularProgressbarWithChildren>
+                    </div>
                 </div>
             </div>
         </div>
