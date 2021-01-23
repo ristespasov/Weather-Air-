@@ -1,13 +1,8 @@
-# Weather & Air check
+# Weathery
 
 ## About 
 
-A responsive, single-page, React.js web application that provides info about the weather forecast and air quality using Rest API. It provides data for current weather conditions, forecast for the following 5 days and air quality index. Air quality is presented through an animated circular progress bar with data for the main AQI (Air Quality Index).
-
-AQI scale is ranged according to USA criteria:
-- 0 - 50 (Good AQI)
-- 51 - 100 (Moderate AQI)
-- 100+ (Poor AQI)
+Weathery provides data for current weather conditions, forecast and air quality index. Contains an auto location finder and allows a custom search.
 
 ## Routes
 
@@ -21,7 +16,7 @@ AQI scale is ranged according to USA criteria:
 - News page in progress...
 
 ## Deployment
-https://competent-elion-075159.netlify.app/
+Netlify: https://weathery-19project.netlify.app/
 
 ## Technologies & Tools
 
