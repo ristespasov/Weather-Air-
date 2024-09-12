@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^1.7.4",
     "eslint-plugin-react": "^7.14.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "^16.9.0",
     "react-circular-progressbar": "^2.0.3",
     "react-countup": "^4.3.3",
